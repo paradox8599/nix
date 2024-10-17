@@ -5,6 +5,7 @@
       url = "github:nix-community/NixOS-WSL/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    home-manager.url = "github:nix-community/home-manager";
   };
 
   outputs =
@@ -19,6 +20,7 @@
         system = "${system}";
         specialArgs = { inherit inputs system username; };
         modules = [
+          inputs.home-manager.nixosModules.default
           # configuration.nix
           nixos-wsl.nixosModules.default
           {
