@@ -76,15 +76,13 @@
               };
             };
 
-            services.openssh.enable = true;
-
             systemd.services.wsl-keep-running = {
               description = "Keep NixOS-WSL running";
               wantedBy = [ "multi-user.target" ];
               serviceConfig = {
                 Type = "simple";
-                ExecStart = "${pkgs.coreutils}/bin/sleep infinity";
                 Restart = "always";
+                ExecStart = "${pkgs.coreutils}/bin/sleep infinity";
               };
             };
           }
