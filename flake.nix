@@ -12,14 +12,14 @@
     , nixpkgs
     , nixos-wsl
     , ...
-    }:
+    }@inputs:
     let
       system = "x86_64-linux";
       username = "nixos";
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.${username} = nixpkgs.lib.nixosSystem {
         system = "${system}";
         modules = [
           # configuration.nix
@@ -71,18 +71,12 @@
                 enable = true;
                 config = {
                   init = { defaultBranch = "main"; };
-                  url = {
-                    "https://github.com/" = {
-                      insteadOf = [ "gh:" "github:" ];
-                    };
-                  };
+                  url = { "https://github.com/" = { insteadOf = [ "gh:" "github:" ]; }; };
                 };
               };
             };
 
-            services.openssh = {
-              enable = true;
-            };
+            services.openssh.enable = true;
 
             systemd.services.wsl-keep-running = {
               description = "Keep NixOS-WSL running";
