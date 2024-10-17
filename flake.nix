@@ -36,8 +36,6 @@
             wsl.wslConf.user.default = "${username}";
 
             environment.systemPackages = with pkgs; [
-              neovim
-              git
               zip
               unzip
               nodejs_22
