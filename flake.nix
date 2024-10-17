@@ -1,30 +1,40 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixos-wsl = {
-      url = "github:nix-community/NixOS-WSL/main";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+    nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
-    inputs@{ nixpkgs, nixos-wsl, ... }:
+    inputs@{ nixpkgs, nixos-wsl, home-manager, ... }:
     let
       system = "x86_64-linux";
+      stateVersion = "24.11";
       username = "nixos";
+      hostname = "nixos";
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      nixosConfigurations.${username} = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
         system = "${system}";
         specialArgs = { inherit inputs system username; };
         modules = [
-          inputs.home-manager.nixosModules.default
-          # configuration.nix
+          home-manager.nixosModules.default
+
+          # home-manager
+          home-manager.nixosModules.home-manager
+          {
+            nix.registry.nixos.flake = inputs.self;
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+          }
+
+          # nixos
           nixos-wsl.nixosModules.default
           {
-            system.stateVersion = "24.05";
+            system.stateVersion = "${stateVersion}";
             nix.settings.experimental-features = [ "nix-command" "flakes" ];
             nixpkgs.config.allowUnfree = true;
 
@@ -70,6 +80,7 @@
                 viAlias = true;
                 vimAlias = true;
               };
+
               git = {
                 enable = true;
                 config = {
@@ -88,7 +99,14 @@
                 ExecStart = "${pkgs.coreutils}/bin/sleep infinity";
               };
             };
+
+            home-manager.users.${username} = {
+              home.stateVersion = "${stateVersion}";
+              home.packages = [ ];
+              programs = { };
+            };
           }
+
         ];
       };
     };
