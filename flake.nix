@@ -59,11 +59,24 @@
                   luajitPackages.lua-lsp
                 ];
 
-                programs.neovim = {
-                  enable = true;
-                  defaultEditor = true;
-                  viAlias = true;
-                  vimAlias = true;
+                programs = {
+                  neovim = {
+                    enable = true;
+                    defaultEditor = true;
+                    viAlias = true;
+                    vimAlias = true;
+                  };
+                  git = {
+                    enable = true;
+                    config = {
+                      init = { defaultBranch = "main"; };
+                      url = {
+                        "https://github.com/" = {
+                          insteadOf = [ "gh:" "github:" ];
+                        };
+                      };
+                    };
+                  };
                 };
 
                 services.openssh = {
