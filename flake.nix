@@ -8,11 +8,7 @@
   };
 
   outputs =
-    { self
-    , nixpkgs
-    , nixos-wsl
-    , ...
-    }@inputs:
+    inputs@{ self, nixpkgs, nixos-wsl, ... }:
     let
       system = "x86_64-linux";
       username = "nixos";
