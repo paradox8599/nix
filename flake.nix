@@ -9,7 +9,7 @@
   };
 
   outputs =
-    inputs@{ self, nixpkgs, nixos-wsl, ... }:
+    inputs@{ nixpkgs, nixos-wsl, ... }:
     let
       system = "x86_64-linux";
       username = "nixos";
@@ -59,6 +59,8 @@
               lua-language-server
               luajitPackages.lua-lsp
               tlrc
+              nixd
+              deadnix
             ];
 
             programs = {
