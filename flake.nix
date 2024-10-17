@@ -57,6 +57,7 @@
               luarocks
               lua-language-server
               luajitPackages.lua-lsp
+              tlrc
             ];
 
             programs = {
