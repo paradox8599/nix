@@ -17,6 +17,7 @@
     {
       nixosConfigurations.${username} = nixpkgs.lib.nixosSystem {
         system = "${system}";
+        specialArgs = { inherit inputs system username; };
         modules = [
           # configuration.nix
           nixos-wsl.nixosModules.default
