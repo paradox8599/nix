@@ -25,23 +25,6 @@
       #     # nixos
       #     nixos-wsl.nixosModules.default
       #     {
-      #       system.stateVersion = "${stateVersion}";
-      #       time.timeZone = "Australia/Sydney";
-      #       nix.settings.experimental-features = [ "nix-command" "flakes" ];
-      #       nixpkgs.config.allowUnfree = true;
-      #       nix.gc = {
-      #         automatic = true;
-      #         dates = "weekly";
-      #         options = "--delete-older-than 30d";
-      #       };
-      #
-      #       wsl.enable = true;
-      #       wsl.defaultUser = "${username}";
-      #       wsl.docker-desktop.enable = true;
-      #       wsl.startMenuLaunchers = true;
-      #       # Which user to start commands in this WSL distro as
-      #       wsl.wslConf.user.default = "${username}";
-      #
       #       environment.systemPackages = with pkgs; [
       #         zip
       #         unzip
