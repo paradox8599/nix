@@ -1,9 +1,7 @@
-{ inputs, ... }:
-let
+{inputs, ...}: let
   username = "nixos";
   pkgs = inputs.nixpkgs.legacyPackages."x86_64-linux";
-in
-{
+in {
   imports = [
     inputs.nixos-wsl.nixosModules.default
   ];
@@ -17,7 +15,7 @@ in
     options = "--delete-older-than 30d";
   };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.allowUnfree = true;
 
   wsl = {
@@ -30,24 +28,24 @@ in
 
   nixpkgs.hostPlatform = "x86_64-linux";
 
-  systemd.user = {
-    services.tmux = {
-      description = "Auto-restart tmux session to ensure wsl is running";
-      after = [ "network.target" ];
-      serviceConfig = {
-        ExecStart = "${pkgs.tmux}/bin/tmux new-session -A -s main";
-        ExecStop = "${pkgs.tmux}/bin/tmux kill-session -t main";
-        Restart = "always";
-        RestartSec = "5s";
-      };
-      wantedBy = [ "default.target" ];
-    };
-    sockets."default.target" = {
-      wantedBy = [ "multi-user.target" ];
-    };
-  };
+  # systemd.user = {
+  #   services.tmux = {
+  #     description = "Auto-restart tmux session to ensure wsl is running";
+  #     # after = [ "network.target" ];
+  #     serviceConfig = {
+  #       ExecStart = "${pkgs.tmux}/bin/tmux new-session -d -s main";
+  #       ExecStop = "${pkgs.tmux}/bin/tmux kill-session -t main";
+  #       Restart = "always";
+  #       RestartSec = "5s";
+  #     };
+  #     wantedBy = [ "multi-user.target" ];
+  #   };
+  # };
 
-  users.users.${username}.linger = true;
+  users.users.${username} = {
+    isNormalUser = true;
+    linger = true;
+  };
 
   environment.systemPackages = with pkgs; [
     zip
@@ -90,8 +88,8 @@ in
     git = {
       enable = true;
       config = {
-        init = { defaultBranch = "main"; };
-        url = { "https://github.com/" = { insteadOf = [ "gh:" "github:" ]; }; };
+        init = {defaultBranch = "main";};
+        url = {"https://github.com/" = {insteadOf = ["gh:" "github:"];};};
       };
     };
   };
