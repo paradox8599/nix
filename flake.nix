@@ -12,7 +12,12 @@
   };
 
   outputs =
-    inputs@{ self, nixpkgs, nixos-wsl, home-manager, ... }:
+    inputs @ { self
+    , nixpkgs
+    , nixos-wsl
+    , home-manager
+    , ...
+    }:
     let
       system = "x86_64-linux";
       stateVersion = "24.11";
@@ -39,6 +44,7 @@
           nixos-wsl.nixosModules.default
           {
             system.stateVersion = "${stateVersion}";
+            time.timeZone = "Australia/Sydney";
             nix.settings.experimental-features = [ "nix-command" "flakes" ];
             nixpkgs.config.allowUnfree = true;
 
@@ -111,7 +117,6 @@
               programs = { };
             };
           }
-
         ];
       };
     };
