@@ -3,12 +3,16 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
+    nix-darwin.url = "github:lnl7/nix-darwin";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
   };
 
   outputs =
-    inputs@{ nixpkgs, nixos-wsl, home-manager, ... }:
+    inputs@{ self, nixpkgs, nixos-wsl, home-manager, ... }:
     let
       system = "x86_64-linux";
       stateVersion = "24.11";
@@ -71,6 +75,7 @@
               tlrc
               nixd
               deadnix
+              alejandra
             ];
 
             programs = {
