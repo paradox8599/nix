@@ -24,16 +24,15 @@
 
     glow # markdown previewer in terminal
     fastfetch
+    just
 
     bottom
     iotop # io monitoring
     iftop # network monitoring
-
     # system call monitoring
     strace # system call monitoring
     ltrace # library call monitoring
     lsof # list open files
-
     # system tools
     pciutils # lspci
     usbutils # lsusb
