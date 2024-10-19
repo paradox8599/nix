@@ -34,20 +34,6 @@ in
 
   nixpkgs.hostPlatform = "x86_64-linux";
 
-  # systemd.user = {
-  #   services.tmux = {
-  #     description = "Auto-restart tmux session to ensure wsl is running";
-  #     # after = [ "network.target" ];
-  #     serviceConfig = {
-  #       ExecStart = "${pkgs.tmux}/bin/tmux new-session -d -s main";
-  #       ExecStop = "${pkgs.tmux}/bin/tmux kill-session -t main";
-  #       Restart = "always";
-  #       RestartSec = "5s";
-  #     };
-  #     wantedBy = [ "multi-user.target" ];
-  #   };
-  # };
-
   users.users.${username} = {
     isNormalUser = true;
     linger = true;
@@ -81,7 +67,6 @@ in
     deadnix
     alejandra
     home-manager
-    fastfetch
   ];
 
   programs = {
