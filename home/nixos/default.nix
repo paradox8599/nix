@@ -57,7 +57,6 @@
     alejandra
   ];
 
-
   # basic configuration of git, please change to your own
   programs.git = {
     enable = true;
@@ -87,6 +86,7 @@
     shellAliases = {
       urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";
       urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
+      nixhistory = "nix profile history --profile /nix/var/nix/profiles/system";
       lg = "lazygit";
       rebuild = "sudo nixos-rebuild --flake ~/.config/nixos";
     };
