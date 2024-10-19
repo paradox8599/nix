@@ -16,7 +16,7 @@
     dates = "weekly";
     options = "--delete-older-than 30d";
   };
-
+  nix.settings.auto-optimise-store = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
   nixpkgs.hostPlatform = "x86_64-linux";
