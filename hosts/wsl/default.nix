@@ -1,7 +1,11 @@
-{inputs, ...}: let
+{ inputs
+, pkgs
+, ...
+}:
+let
   username = "nixos";
-  pkgs = inputs.nixpkgs.legacyPackages."x86_64-linux";
-in {
+in
+{
   imports = [
     inputs.nixos-wsl.nixosModules.default
   ];
@@ -15,7 +19,7 @@ in {
     options = "--delete-older-than 30d";
   };
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
 
   wsl = {
@@ -91,8 +95,8 @@ in {
     git = {
       enable = true;
       config = {
-        init = {defaultBranch = "main";};
-        url = {"https://github.com/" = {insteadOf = ["gh:" "github:"];};};
+        init = { defaultBranch = "main"; };
+        url = { "https://github.com/" = { insteadOf = [ "gh:" "github:" ]; }; };
       };
     };
   };
