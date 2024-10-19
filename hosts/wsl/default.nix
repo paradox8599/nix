@@ -43,6 +43,8 @@
     wget
     tmux
 
+    wslu
+
     home-manager
 
     # FHS environment
