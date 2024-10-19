@@ -4,8 +4,6 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-    fastfetch
-
     ripgrep
     jq
     fzf
@@ -19,12 +17,13 @@
     tree
     gnused
     gnutar
-    zstd
     gnupg
+    # zstd
 
     nix-output-monitor
 
     glow # markdown previewer in terminal
+    fastfetch
 
     bottom
     iotop # io monitoring
@@ -38,6 +37,24 @@
     # system tools
     pciutils # lspci
     usbutils # lsusb
+
+    nodejs_22
+    python312
+    bun
+    # cargo
+    # rustc
+    # rustup
+
+    tlrc
+    yazi
+    sad
+    lazygit
+
+    lua-language-server
+    luajitPackages.lua-lsp
+    nixd
+    deadnix
+    alejandra
   ];
 
   # basic configuration of git, please change to your own
@@ -70,7 +87,7 @@
       urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";
       urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
       lg = "lazygit";
-      rebuild = "nixos-rebuild --flake ~/.config/nixos";
+      rebuild = "sudo nixos-rebuild --flake ~/.config/nixos";
     };
   };
 

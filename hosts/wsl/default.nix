@@ -40,29 +40,15 @@ in
   };
 
   environment.systemPackages = with pkgs; [
+    gcc
+
     zip
     unzip
     xz
 
-    nodejs_22
-    bun
-    sad
-    yazi
-    gcc
-    python312
-    tmux
-    cargo
-    rustc
-    rustup
-    lazygit
     wget
-    luarocks
-    lua-language-server
-    luajitPackages.lua-lsp
-    tlrc
-    nixd
-    deadnix
-    alejandra
+    tmux
+
     home-manager
   ];
 
