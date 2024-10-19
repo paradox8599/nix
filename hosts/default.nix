@@ -8,19 +8,23 @@
       specialArgs = { inherit self inputs; };
     in
     {
-      nixos = nixosSystem {
-        system = "x86_64-linux";
-        inherit specialArgs;
-        modules = [
-          ./wsl
+      wsl =
+        let
+          hostname = "wsl";
+        in
+        nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = specialArgs // { inherit hostname; };
+          modules = [
+            ./wsl
 
-          inputs.home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.nixos = import "${self}/home/nixos";
-          }
-        ];
-      };
+            inputs.home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.nixos = import "${self}/home/nixos";
+            }
+          ];
+        };
     };
 }

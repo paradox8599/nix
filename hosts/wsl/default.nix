@@ -1,14 +1,13 @@
 { inputs
 , pkgs
+, hostname
 , ...
-}:
-let
-  username = "nixos";
-in
-{
+}: {
   imports = [
     inputs.nixos-wsl.nixosModules.default
   ];
+
+  networking.hostName = hostname;
 
   system.stateVersion = "24.11";
   time.timeZone = "Australia/Sydney";
@@ -21,22 +20,17 @@ in
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.hostPlatform = "x86_64-linux";
 
   wsl = {
     enable = true;
-    defaultUser = "${username}";
     docker-desktop.enable = true;
     startMenuLaunchers = true;
+    interop.includePath = false; # include windows path
     useWindowsDriver = true;
     nativeSystemd = true;
-    wslConf.user.default = "${username}";
-  };
-
-  nixpkgs.hostPlatform = "x86_64-linux";
-
-  users.users.${username} = {
-    isNormalUser = true;
-    linger = true;
+    # defaultUser = "${username}";
+    # wslConf.user.default = "${username}";
   };
 
   environment.systemPackages = with pkgs; [
