@@ -1,13 +1,12 @@
 { inputs
 , pkgs
-, hostname
 , ...
 }: {
   imports = [
     inputs.nixos-wsl.nixosModules.default
   ];
 
-  networking.hostName = hostname;
+  networking.hostName = "wsl";
 
   system.stateVersion = "24.11";
   time.timeZone = "Australia/Sydney";
