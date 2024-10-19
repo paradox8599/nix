@@ -87,7 +87,9 @@
       urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
       nixhistory = "nix profile history --profile /nix/var/nix/profiles/system";
       lg = "lazygit";
-      rebuild = "sudo nixos-rebuild --flake ~/.config/nixos";
+      rb = "sudo nixos-rebuild --flake ~/.config/nixos";
+      rbv = "sudo nixos-rebuild --flake ~/.config/nixos --show-trace --print-build-logs --verbose";
+
     };
   };
 
