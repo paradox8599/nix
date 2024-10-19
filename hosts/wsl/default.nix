@@ -23,6 +23,8 @@ in {
     defaultUser = "${username}";
     docker-desktop.enable = true;
     startMenuLaunchers = true;
+    useWindowsDriver = true;
+    nativeSystemd = true;
     wslConf.user.default = "${username}";
   };
 
@@ -75,6 +77,7 @@ in {
     deadnix
     alejandra
     home-manager
+    fastfetch
   ];
 
   programs = {
