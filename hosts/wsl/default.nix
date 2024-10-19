@@ -42,13 +42,10 @@ in
   environment.systemPackages = with pkgs; [
     zip
     unzip
+    xz
+
     nodejs_22
     bun
-    bottom
-    fd
-    fzf
-    jq
-    ripgrep
     sad
     yazi
     gcc
