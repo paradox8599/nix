@@ -11,11 +11,13 @@
     flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
   };
 
-  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-    debug = true;
-    systems = [ "x86_64-linux" ];
-    imports = [
-      ./hosts
-    ];
-  };
+  outputs =
+    inputs:
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+      debug = true;
+      systems = [ "x86_64-linux" ];
+      imports = [
+        ./hosts
+      ];
+    };
 }

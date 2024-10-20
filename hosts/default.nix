@@ -1,17 +1,19 @@
-{ self
-, inputs
-, ...
-}: {
+{ self, inputs, ... }:
+{
   flake.nixosConfigurations =
     let
       inherit (inputs.nixpkgs.lib) nixosSystem;
-      specialArgs = { inherit self inputs; };
+      specialArgs = {
+        inherit self inputs;
+      };
     in
     {
       wsl =
         let
           username = "nixos";
-          args = { inherit username; };
+          args = {
+            inherit username;
+          };
         in
         nixosSystem {
           system = "x86_64-linux";

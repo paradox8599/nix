@@ -1,4 +1,10 @@
-{ self, inputs, pkgs, ... }: {
+{
+  self,
+  inputs,
+  pkgs,
+  ...
+}:
+{
   imports = [
     inputs.nixos-wsl.nixosModules.default
   ];
@@ -14,7 +20,10 @@
     options = "--delete-older-than 30d";
   };
   nix.settings.auto-optimise-store = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   nixpkgs.config.allowUnfree = true;
   nixpkgs.hostPlatform = "x86_64-linux";
 
@@ -58,8 +67,17 @@
     git = {
       enable = true;
       config = {
-        init = { defaultBranch = "main"; };
-        url = { "https://github.com/" = { insteadOf = [ "gh:" "github:" ]; }; };
+        init = {
+          defaultBranch = "main";
+        };
+        url = {
+          "https://github.com/" = {
+            insteadOf = [
+              "gh:"
+              "github:"
+            ];
+          };
+        };
       };
     };
   };

@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   home.username = "nixos";
   home.homeDirectory = "/home/nixos";
 
@@ -49,6 +50,7 @@
     sad
     lazygit
 
+    nixfmt-rfc-style
     lua-language-server
     luajitPackages.lua-lsp
     nixd
