@@ -1,8 +1,12 @@
-{ pkgs, ... }:
+{ self, pkgs, ... }:
 {
   home.username = "nixos";
   home.homeDirectory = "/home/nixos";
   home.stateVersion = "24.11";
+
+  imports = [
+    ../share/tmux.nix
+  ];
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
