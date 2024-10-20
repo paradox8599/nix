@@ -52,8 +52,6 @@
 
     home-manager
 
-    # FHS environment
-    (import "${self}/modules/custom/fhs.nix" { inherit pkgs; })
   ];
 
   programs = {

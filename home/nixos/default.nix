@@ -5,7 +5,7 @@
   home.stateVersion = "24.11";
 
   imports = [
-    ../share/tmux.nix
+    ../../modules/share/tmux.nix
   ];
 
   # Packages that should be installed to the user profile.
@@ -62,6 +62,9 @@
     nixd
     deadnix
     alejandra
+
+    # FHS environment
+    (import "${self}/modules/share/fhs.nix" { inherit pkgs; })
   ];
 
   programs = {
