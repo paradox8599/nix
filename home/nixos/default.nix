@@ -50,6 +50,7 @@
     yazi
     sad
     lazygit
+    flyctl
 
     nixfmt-rfc-style
     lua-language-server
