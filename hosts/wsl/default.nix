@@ -57,6 +57,7 @@
   ];
 
   programs = {
+    zsh.enable = true;
     neovim = {
       enable = true;
       defaultEditor = true;
@@ -81,4 +82,6 @@
       };
     };
   };
+
+  users.defaultUserShell = pkgs.zsh;
 }

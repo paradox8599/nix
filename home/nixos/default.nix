@@ -76,13 +76,11 @@
     };
   };
 
-  programs.bash = {
+  programs.zsh = {
     enable = true;
     enableCompletion = true;
-    # TODO add your custom bashrc here
-    bashrcExtra = ''
-      export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
-    '';
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
 
     shellAliases = {
       urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";
@@ -93,7 +91,6 @@
       rbv = "sudo nixos-rebuild --flake ~/.config/nixos --show-trace --print-build-logs --verbose";
       t = ''[[ $(tmux ls 2>/dev/null | rg -v attached | wc -l) -gt 0 ]] && tmux attach -t $(tmux ls | rg -v attach | cut -d":" -f1 | tr "\n" " " | cut -d" " -f1) || tmux -u new-session -s main'';
       tl = "tmux ls 2>/dev/null";
-
     };
   };
 
