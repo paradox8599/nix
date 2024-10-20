@@ -71,11 +71,11 @@
           defaultBranch = "main";
         };
         url = {
+          "git@github.com:" = {
+            insteadOf = [ "gh:" ];
+          };
           "https://github.com/" = {
-            insteadOf = [
-              "gh:"
-              "github:"
-            ];
+            insteadOf = [ "github:" ];
           };
         };
       };
