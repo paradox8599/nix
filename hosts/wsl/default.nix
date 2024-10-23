@@ -52,6 +52,8 @@
 
     home-manager
 
+    mpv
+    ffmpeg
   ];
 
   programs = {
