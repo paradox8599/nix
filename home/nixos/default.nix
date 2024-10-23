@@ -106,7 +106,7 @@
       shellAliases = {
         urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";
         urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
-        nixhistory = "nix profile history --profile /nix/var/nix/profiles/system";
+        nh = "nix profile history --profile /nix/var/nix/profiles/system";
         lg = "lazygit";
         rb = "sudo nixos-rebuild --flake ~/.config/nixos";
         rbv = "sudo nixos-rebuild --flake ~/.config/nixos --show-trace --print-build-logs --verbose";
