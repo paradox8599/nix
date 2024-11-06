@@ -50,11 +50,13 @@
     pciutils # lspci
     usbutils # lsusb
 
+    # required by neovim?
     nodejs_22
     python312
-    bun
-    # cargo
-    # rustc
+    cargo
+    rustc
+
+    # bun
     # rustup
 
     tlrc
