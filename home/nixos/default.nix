@@ -114,6 +114,7 @@
         tl = "tmux ls 2>/dev/null";
         j = "z";
         ji = "zi";
+        vi = "fhs -c vi";
       };
     };
 
