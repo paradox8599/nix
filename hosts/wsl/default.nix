@@ -40,6 +40,7 @@
 
   environment.systemPackages = with pkgs; [
     gcc
+    gnumake
 
     zip
     unzip
