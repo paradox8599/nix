@@ -57,6 +57,5 @@
       # set -g status-right-length 90
       # set -g status-justify centre
     '';
-
   };
 }
