@@ -59,6 +59,7 @@
     rust-analyzer
     rustfmt
     clippy
+    sqlite
     # rustup
 
     tlrc
