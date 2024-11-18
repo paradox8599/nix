@@ -50,13 +50,15 @@
     pciutils # lspci
     usbutils # lsusb
 
-    # required by neovim?
+    # common dev deps
     nodejs_22
+    bun
     python312
     cargo
     rustc
-
-    # bun
+    rust-analyzer
+    rustfmt
+    clippy
     # rustup
 
     tlrc
