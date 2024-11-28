@@ -66,6 +66,7 @@
     yazi
     sad
     lazygit
+    lazydocker
     flyctl
 
     nixfmt-rfc-style
@@ -117,6 +118,7 @@
         urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
         nh = "nix profile history --profile /nix/var/nix/profiles/system";
         lg = "lazygit";
+        ldk = "lazydocker";
         rb = "sudo nixos-rebuild --flake ~/.config/nixos";
         rbv = "sudo nixos-rebuild --flake ~/.config/nixos --show-trace --print-build-logs --verbose";
         t = ''[[ $(tmux ls 2>/dev/null | rg -v attached | wc -l) -gt 0 ]] && tmux attach -t $(tmux ls | rg -v attach | cut -d":" -f1 | tr "\n" " " | cut -d" " -f1) || tmux -u new-session -s main'';
