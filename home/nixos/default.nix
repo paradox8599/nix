@@ -68,6 +68,7 @@
     lazygit
     lazydocker
     flyctl
+    hyperfine
 
     nixfmt-rfc-style
     lua-language-server
