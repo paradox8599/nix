@@ -46,6 +46,7 @@
     unzip
     xz
 
+    neovim
     wget
     tmux
 
@@ -58,13 +59,10 @@
   ];
 
   programs = {
+    # https://github.com/nix-community/nix-ld
+    nix-ld.enable = true;
+
     zsh.enable = true;
-    neovim = {
-      enable = true;
-      defaultEditor = true;
-      viAlias = true;
-      vimAlias = true;
-    };
 
     git = {
       enable = true;

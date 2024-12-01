@@ -70,16 +70,19 @@
     flyctl
     hyperfine
 
-    nixfmt-rfc-style
-    lua-language-server
-    luajitPackages.lua-lsp
+    # lua-language-server
+    # luajitPackages.lua-lsp
+
+    # neovim nix plugin pack
     nixd
     deadnix
     alejandra
+    nixfmt-rfc-style
   ];
 
   programs = {
     home-manager.enable = true;
+
     git = {
       enable = true;
       userName = "paradox8599";
@@ -126,8 +129,20 @@
         tl = "tmux ls 2>/dev/null";
         j = "z";
         ji = "zi";
-        vi = "fhs -c vi";
+        vifhs = "fhs -c vi";
       };
+    };
+
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+      viAlias = true;
+      vimAlias = true;
+      withNodeJs = true;
+      withPython3 = true;
+      withRuby = true;
+
+      # plugins = [ ];
     };
 
     zoxide = {
