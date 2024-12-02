@@ -49,6 +49,7 @@
     # system tools
     pciutils # lspci
     usbutils # lsusb
+    mitmproxy
 
     # common dev deps
     nodejs_22
