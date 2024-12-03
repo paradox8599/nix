@@ -130,7 +130,6 @@
         tl = "tmux ls 2>/dev/null";
         j = "z";
         ji = "zi";
-        vifhs = "fhs -c vi";
       };
     };
 
