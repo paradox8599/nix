@@ -1,8 +1,4 @@
-{
-  self,
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
 {
   home.username = "nixos";
   home.homeDirectory = "/home/nixos";
@@ -14,9 +10,6 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-    # FHS environment
-    (import "${self}/modules/share/fhs.nix" { inherit pkgs; })
-
     ripgrep
     jq
     fzf
