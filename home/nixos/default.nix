@@ -17,15 +17,6 @@
     nmap
     eza
 
-    # misc
-    file
-    which
-    tree
-    gnused
-    gnutar
-    gnupg
-    # zstd
-
     nix-output-monitor
 
     glow # markdown previewer in terminal
@@ -72,6 +63,8 @@
     deadnix
     alejandra
     nixfmt-rfc-style
+
+    sops
   ];
 
   programs = {

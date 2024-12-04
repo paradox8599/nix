@@ -39,12 +39,17 @@
 
   environment.systemPackages = with pkgs; [
     gcc
-    gnumake
     openssl
-
+    gnumake
+    gnused
+    gnutar
+    gnupg
     zip
     unzip
     xz
+    file
+    which
+    tree
 
     neovim
     wget
