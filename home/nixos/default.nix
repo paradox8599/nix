@@ -63,8 +63,6 @@
     deadnix
     alejandra
     nixfmt-rfc-style
-
-    sops
   ];
 
   programs = {
@@ -94,6 +92,7 @@
       syntaxHighlighting.enable = true;
 
       profileExtra = ''
+        # yazi set cwd when navigate
         function y() {
           local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
           yazi "$@" --cwd-file="$tmp"
@@ -102,11 +101,15 @@
           fi
           rm -f -- "$tmp"
         }
+
+        export SOPS_AGE_KEY_FILE=~/.config/sops/age.key
       '';
 
       shellAliases = {
-        urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";
-        urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
+        ls = "exa";
+        l = "exa --long --icons --sort=type --group";
+        la = "l --all";
+        ll = "l --header";
         nh = "nix profile history --profile /nix/var/nix/profiles/system";
         lg = "lazygit";
         ldk = "lazydocker";

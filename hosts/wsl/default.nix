@@ -50,6 +50,8 @@
     file
     which
     tree
+    age # file encryption
+    sops # secrets manager
 
     neovim
     wget
