@@ -36,17 +36,17 @@
     mitmproxy
 
     # common dev deps
+    sqlite
     nodejs_22
     bun
     deno
     python312
-    cargo
-    rustc
-    rust-analyzer
-    rustfmt
-    clippy
-    sqlite
-    # rustup
+    rustup
+    # cargo
+    # rustc
+    # rust-analyzer
+    # rustfmt
+    # clippy
 
     tlrc
     yazi
