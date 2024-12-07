@@ -38,6 +38,7 @@
     # common dev deps
     nodejs_22
     bun
+    deno
     python312
     cargo
     rustc
