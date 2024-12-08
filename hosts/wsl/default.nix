@@ -77,14 +77,6 @@
         init = {
           defaultBranch = "main";
         };
-        url = {
-          "git@github.com:" = {
-            insteadOf = [ "gh:" ];
-          };
-          "https://github.com/" = {
-            insteadOf = [ "github:" ];
-          };
-        };
       };
     };
   };
