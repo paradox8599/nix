@@ -37,6 +37,11 @@
     # wslConf.user.default = "${username}";
   };
 
+  environment.variables = {
+    LANG = "en_US.UTF-8";
+    LC_ALL = "en_US.UTF-8";
+  };
+
   environment.systemPackages = with pkgs; [
     gcc
     openssl
