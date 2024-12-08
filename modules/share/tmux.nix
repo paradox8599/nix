@@ -48,7 +48,7 @@
 
       # split window at current path
       bind 'v' split-window -v -c "#{pane_current_path}"
-      bind 'h' split-window -h -c "#{pane_current_path}"
+      bind 'b' split-window -h -c "#{pane_current_path}"
 
       # suggested by vim-tpipeline
       set -g focus-events on
