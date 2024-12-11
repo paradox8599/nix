@@ -1,4 +1,8 @@
-{ pkgs, ... }:
+{
+  inputs,
+  pkgs,
+  ...
+}:
 {
   home.username = "nixos";
   home.homeDirectory = "/home/nixos";
@@ -39,7 +43,8 @@
     # common dev deps
     sqlite
     nodejs_22
-    bun
+    # bun
+    inputs.nixpkgs-master.legacyPackages."x86_64-linux".bun
     deno
     python312
     rustup
