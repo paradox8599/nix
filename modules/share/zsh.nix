@@ -7,6 +7,8 @@
     syntaxHighlighting.enable = true;
 
     profileExtra = ''
+      export DISPLAY=:0
+
       # yazi set cwd when navigate
       function y() {
         local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"

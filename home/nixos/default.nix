@@ -70,6 +70,10 @@
     deadnix
     alejandra
     nixfmt-rfc-style
+
+    # for dioxus
+    cargo-binstall
+    dioxus-cli
   ];
 
   programs = {
