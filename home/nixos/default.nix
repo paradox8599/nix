@@ -19,6 +19,7 @@
     jq
     fzf
     fd
+    diff-so-fancy
     nmap
     eza
 
@@ -43,8 +44,7 @@
     # common dev deps
     sqlite
     nodejs_22
-    # bun
-    inputs.nixpkgs-master.legacyPackages."x86_64-linux".bun
+    bun
     deno
     python312
     rustup
@@ -53,6 +53,7 @@
     # rust-analyzer
     # rustfmt
     # clippy
+    uv
 
     tlrc
     yazi
