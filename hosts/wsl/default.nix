@@ -32,7 +32,6 @@
     startMenuLaunchers = true;
     interop.includePath = false; # include windows path
     useWindowsDriver = true;
-    nativeSystemd = true;
     # defaultUser = "${username}";
     # wslConf.user.default = "${username}";
   };
