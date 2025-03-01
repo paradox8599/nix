@@ -44,13 +44,16 @@
     bun
     deno
     python312
-    rustup
+    uv
+
     # cargo
     # rustc
     # rust-analyzer
     # rustfmt
     # clippy
-    uv
+
+    rustup
+    cargo-shuttle
 
     tlrc
     yazi

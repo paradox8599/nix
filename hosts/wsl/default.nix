@@ -43,6 +43,7 @@
 
   environment.systemPackages = with pkgs; [
     gcc
+    pkg-config
     openssl
     gnumake
     gnused
