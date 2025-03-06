@@ -10,17 +10,17 @@
       export DISPLAY=:0
 
       # yazi set cwd when navigate
+
       function y() {
-        local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-        yazi "$@" --cwd-file="$tmp"
-        if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-          builtin cd -- "$cwd"
-        fi
-        rm -f -- "$tmp"
+	      local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	      yazi --cwd-file="$tmp"
+	      if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		      builtin cd -- "$cwd"
+	      fi
+	      rm -f -- "$tmp"
       }
 
-      export SOPS_AGE_KEY_FILE=~/.config/sops/age.key
-      cd ~
+      [ -z "$TMUX" ] && cd ~
     '';
 
     shellAliases = {
