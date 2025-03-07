@@ -37,6 +37,7 @@
       tl = "tmux ls 2>/dev/null";
       j = "z";
       ji = "zi";
+      nsh = "nix-shell";
     };
   };
 }
