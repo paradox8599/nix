@@ -38,6 +38,7 @@
       j = "z";
       ji = "zi";
       nsh = "nix-shell";
+      docker = "/usr/bin/docker";
     };
   };
 }
