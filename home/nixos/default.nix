@@ -46,14 +46,9 @@
     python312
     uv
 
-    # cargo
-    # rustc
-    # rust-analyzer
-    # rustfmt
-    # clippy
-
     rustup
     cargo-shuttle
+    cargo-binstall
 
     tlrc
     yazi
@@ -63,18 +58,11 @@
     flyctl
     hyperfine
 
-    # lua-language-server
-    # luajitPackages.lua-lsp
-
     # neovim nix plugin pack
     nixd
     deadnix
     alejandra
     nixfmt-rfc-style
-
-    # for dioxus
-    cargo-binstall
-    dioxus-cli
   ];
 
   programs = {
