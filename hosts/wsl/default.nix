@@ -86,5 +86,18 @@
     };
   };
 
+  services = {
+    openssh = {
+      enable = true;
+      settings.PasswordAuthentication = false;
+      settings.KbdInteractiveAuthentication = false;
+      settings.PermitRootLogin = "no";
+    };
+  };
+
+  users.users.nixos.openssh.authorizedKeys.keys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBkziE1S2eJTyLIqCrwpQCWMbtBkU0tS2arMb+96KPYl para@DESKTOP-FHFVQ2R"
+  ];
+
   users.defaultUserShell = pkgs.zsh;
 }
