@@ -63,6 +63,9 @@
     deadnix
     alejandra
     nixfmt-rfc-style
+
+    # llm
+    shell-gpt
   ];
 
   programs = {
@@ -104,7 +107,7 @@
     };
 
     gitui = {
-      enable = false;
+      enable = true;
       keyConfig = ''
         (
           open_help: Some(( code: F(1), modifiers: "")),
@@ -140,27 +143,25 @@
       '';
       theme = ''
         (
-          selected_tab: Reset,
-          command_fg: White,
-          selection_bg: Blue,
-          selection_fg: White,
-          cmdbar_bg: Blue,
-          cmdbar_extra_lines_bg: Blue,
-          disabled_fg: DarkGray,
-          diff_line_add: Green,
-          diff_line_delete: Red,
-          diff_file_added: LightGreen,
-          diff_file_removed: LightRed,
-          diff_file_moved: LightMagenta,
-          diff_file_modified: Yellow,
-          commit_hash: Magenta,
-          commit_time: LightCyan,
-          commit_author: Green,
-          danger_fg: Red,
-          push_gauge_bg: Blue,
-          push_gauge_fg: Reset,
-          tag_fg: LightMagenta,
-          branch_fg: LightYellow,
+          selected_tab: Some("Blue"),
+          command_fg: Some("White"),
+          selection_bg: Some("Blue"),
+          selection_fg: Some("#ffffff"),
+          cmdbar_bg: Some("#2e3440"),
+          cmdbar_extra_lines_bg: Some("#3b4252"),
+          disabled_fg: Some("#4c566a"),
+          diff_line_add: Some("#a3be8c"),
+          diff_line_delete: Some("#bf616a"),
+          diff_file_added: Some("#8fbcbb"),
+          diff_file_removed: Some("#d08770"),
+          diff_file_moved: Some("#b48ead"),
+          diff_file_modified: Some("#ebcb8b"),
+          commit_hash: Some("#b48ead"),
+          commit_time: Some("#88c0d0"),
+          commit_author: Some("#a3be8c"),
+          danger_fg: Some("#bf616a"),
+          push_gauge_bg: Some("#5e81ac"),
+          push_gauge_fg: Some("#eceff4"),
         )
       '';
     };
