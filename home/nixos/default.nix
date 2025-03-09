@@ -49,6 +49,7 @@
     rustup
     cargo-shuttle
     cargo-binstall
+    cargo-cache
 
     tlrc
     yazi
