@@ -95,8 +95,8 @@
     };
   };
 
-  users.users.nixos.openssh.authorizedKeys.keys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBkziE1S2eJTyLIqCrwpQCWMbtBkU0tS2arMb+96KPYl para@DESKTOP-FHFVQ2R"
+  users.users.nixos.openssh.authorizedKeys.keyFiles = [
+    ../../configs/ssh/authorized_keys
   ];
 
   users.defaultUserShell = pkgs.zsh;
