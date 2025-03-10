@@ -42,6 +42,7 @@
     pciutils # lspci
     usbutils # lsusb
     mitmproxy
+    mtr
 
     # common dev deps
     sqlite
