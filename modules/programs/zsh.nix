@@ -7,7 +7,7 @@
     syntaxHighlighting.enable = true;
 
     profileExtra = ''
-      export DISPLAY=:0
+      # export DISPLAY=:0
 
       # yazi set cwd when navigate
 
