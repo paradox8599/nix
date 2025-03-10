@@ -75,7 +75,5 @@
     shell-gpt
   ];
 
-  programs = {
-    home-manager.enable = true;
-  };
+  programs = { };
 }
