@@ -8,6 +8,7 @@
 
     profileExtra = ''
         export DISPLAY=:0
+        # export TERM=xterm-256color
 
         # yazi set cwd when navigate
         function y() {
