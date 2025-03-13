@@ -8,24 +8,33 @@
   imports = [
     inputs.nixos-wsl.nixosModules.default
   ];
-
   networking.hostName = "wsl";
-
   system.stateVersion = "24.11";
   time.timeZone = "Australia/Sydney";
 
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 30d";
+  nix = {
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 30d";
+    };
+    settings = {
+      auto-optimise-store = true;
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+      # trusted-users = [
+      #   "root"
+      #   "nixos"
+      # ];
+    };
   };
-  nix.settings.auto-optimise-store = true;
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.hostPlatform = "x86_64-linux";
+
+  nixpkgs = {
+    config.allowUnfree = true;
+    hostPlatform = "x86_64-linux";
+  };
 
   wsl = {
     enable = true;
@@ -37,39 +46,40 @@
     # wslConf.user.default = "${username}";
   };
 
-  environment.variables = {
-    LANG = "en_US.UTF-8";
-    LC_ALL = "en_US.UTF-8";
+  environment = {
+    variables = {
+      LANG = "en_US.UTF-8";
+      LC_ALL = "en_US.UTF-8";
+    };
+
+    systemPackages = with pkgs; [
+      gcc
+      pkg-config
+      openssl
+      gnumake
+      gnused
+      gnutar
+      gnupg
+      zip
+      unzip
+      xz
+      file
+      which
+      tree
+
+      neovim
+      wget
+      tmux
+
+      wslu
+
+      home-manager
+
+      mpv
+      ffmpeg
+    ];
+
   };
-
-  environment.systemPackages = with pkgs; [
-    gcc
-    pkg-config
-    openssl
-    gnumake
-    gnused
-    gnutar
-    gnupg
-    zip
-    unzip
-    xz
-    file
-    which
-    tree
-    age # file encryption
-    sops # secrets manager
-
-    neovim
-    wget
-    tmux
-
-    wslu
-
-    home-manager
-
-    mpv
-    ffmpeg
-  ];
 
   programs = {
     # https://github.com/nix-community/nix-ld
@@ -96,9 +106,10 @@
     };
   };
 
-  users.users.${username}.openssh.authorizedKeys.keyFiles = [
-    ../../configs/ssh/authorized_keys
-  ];
-
-  users.defaultUserShell = pkgs.zsh;
+  users = {
+    defaultUserShell = pkgs.zsh;
+    users.${username}.openssh.authorizedKeys.keyFiles = [
+      ../../configs/ssh/authorized_keys
+    ];
+  };
 }

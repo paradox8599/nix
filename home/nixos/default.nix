@@ -45,6 +45,12 @@
     mitmproxy
     mtr
 
+    devenv
+    direnv
+    cachix
+    # age # file encryption
+    # sops # secrets manager
+
     # common dev deps
     sqlite
     nodejs_22
@@ -74,6 +80,7 @@
 
     # llm
     shell-gpt
+
   ];
 
   programs = { };
