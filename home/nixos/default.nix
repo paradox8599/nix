@@ -5,6 +5,7 @@
   home.stateVersion = "24.11";
 
   imports = [
+    ../../modules/programs/direnv.nix
     ../../modules/programs/git.nix
     ../../modules/programs/gitui.nix
     ../../modules/programs/neovim.nix
@@ -56,8 +57,6 @@
     cargo-shuttle
     cargo-binstall
     cargo-cache
-
-    direnv
 
     tlrc
     yazi

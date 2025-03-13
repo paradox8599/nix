@@ -19,8 +19,6 @@
       	  rm -f -- "$tmp"
         }
 
-        eval "$(direnv hook zsh)"
-
         [ -z "$TMUX" ] && cd ~
     '';
 
