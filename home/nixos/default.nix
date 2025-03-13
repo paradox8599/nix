@@ -57,6 +57,8 @@
     cargo-binstall
     cargo-cache
 
+    direnv
+
     tlrc
     yazi
     sad

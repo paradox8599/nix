@@ -7,20 +7,22 @@
     syntaxHighlighting.enable = true;
 
     profileExtra = ''
-      # export DISPLAY=:0
+        export DISPLAY=:0
 
-      # yazi set cwd when navigate
+        # yazi set cwd when navigate
 
-      function y() {
-	      local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	      yazi --cwd-file="$tmp"
-	      if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		      builtin cd -- "$cwd"
-	      fi
-	      rm -f -- "$tmp"
-      }
+        function y() {
+      	  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+      	  yazi --cwd-file="$tmp"
+      	  if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+      		  builtin cd -- "$cwd"
+      	  fi
+      	  rm -f -- "$tmp"
+        }
 
-      [ -z "$TMUX" ] && cd ~
+        eval "$(direnv hook zsh)"
+
+        [ -z "$TMUX" ] && cd ~
     '';
 
     shellAliases = {
