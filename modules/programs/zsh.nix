@@ -10,7 +10,6 @@
         export DISPLAY=:0
 
         # yazi set cwd when navigate
-
         function y() {
       	  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
       	  yazi --cwd-file="$tmp"
@@ -39,7 +38,6 @@
       tl = "tmux ls 2>/dev/null";
       j = "z";
       ji = "zi";
-      nsh = "nix-shell";
       docker = "/usr/bin/docker";
     };
   };
