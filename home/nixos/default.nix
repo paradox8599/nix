@@ -59,13 +59,9 @@
     python312
     uv
 
-    rustup
-    cargo-shuttle
-    cargo-binstall
-    cargo-cache
-
     tlrc
     yazi
+    dust
     sad
     lazygit
     lazydocker
@@ -80,7 +76,6 @@
 
     # llm
     shell-gpt
-
   ];
 
   programs = { };
