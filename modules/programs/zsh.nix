@@ -35,8 +35,6 @@
       rbv = "sudo nixos-rebuild --flake ~/.config/nixos --show-trace --print-build-logs --verbose";
       t = ''[[ $(tmux ls 2>/dev/null | rg -v attached | wc -l) -gt 0 ]] && tmux attach -t $(tmux ls | rg -v attach | cut -d":" -f1 | tr "\n" " " | cut -d" " -f1) || tmux -u new-session -s main'';
       tl = "tmux ls 2>/dev/null";
-      j = "z";
-      ji = "zi";
       docker = "/usr/bin/docker";
     };
   };
