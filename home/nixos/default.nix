@@ -5,6 +5,7 @@
   home.stateVersion = "24.11";
 
   imports = [
+    ../../modules/programs/aider.nix
     ../../modules/programs/direnv.nix
     ../../modules/programs/git.nix
     ../../modules/programs/gitui.nix
@@ -25,6 +26,14 @@
     diff-so-fancy
     nmap
     eza
+    tlrc
+    yazi
+    dust
+    sad
+    lazygit
+    lazydocker
+    flyctl
+    hyperfine
 
     nix-output-monitor
 
@@ -66,15 +75,6 @@
     rust-analyzer
     clippy
 
-    tlrc
-    yazi
-    dust
-    sad
-    lazygit
-    lazydocker
-    flyctl
-    hyperfine
-
     # neovim nix plugin pack
     nixd
     deadnix
@@ -82,9 +82,6 @@
     nixfmt-rfc-style
 
     # llm
-    aider-chat
     shell-gpt
   ];
-
-  programs = { };
 }

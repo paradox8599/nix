@@ -1,0 +1,44 @@
+{
+  "deepseek-ai/DeepSeek-R1:turbo": {
+    "max_tokens": 8192,
+    "max_input_tokens": 32768,
+    "max_output_tokens": 8192,
+    "litellm_provider": "openai",
+    "mode": "chat"
+  },
+  "deepseek-ai/DeepSeek-R1:pro": {
+    "max_tokens": 8192,
+    "max_input_tokens": 65536,
+    "max_output_tokens": 8192,
+    "litellm_provider": "openai",
+    "mode": "chat"
+  },
+  "deepseek-ai/DeepSeek-R1": {
+    "max_tokens": 8192,
+    "max_input_tokens": 65536,
+    "max_output_tokens": 8192,
+    "litellm_provider": "openai",
+    "mode": "chat"
+  },
+  "deepseek-ai/DeepSeek-V3": {
+    "max_tokens": 8192,
+    "max_input_tokens": 65536,
+    "max_output_tokens": 8192,
+    "litellm_provider": "openai",
+    "mode": "chat"
+  },
+  "Qwen/QwQ-32B": {
+    "max_tokens": 8192,
+    "max_input_tokens": 131072,
+    "max_output_tokens": 8192,
+    "litellm_provider": "openai",
+    "mode": "chat"
+  },
+  "Qwen/Qwen2.5-72B-Instruct": {
+    "max_tokens": 8192,
+    "max_input_tokens": 32768,
+    "max_output_tokens": 8192,
+    "litellm_provider": "openai",
+    "mode": "chat"
+  }
+}
