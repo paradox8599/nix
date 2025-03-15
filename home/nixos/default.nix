@@ -59,6 +59,13 @@
     python312
     uv
 
+    # rust
+    rustc
+    cargo
+    rustfmt
+    rust-analyzer
+    clippy
+
     tlrc
     yazi
     dust
@@ -75,6 +82,7 @@
     nixfmt-rfc-style
 
     # llm
+    aider-chat
     shell-gpt
   ];
 
