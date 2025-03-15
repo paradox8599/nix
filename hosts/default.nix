@@ -19,7 +19,7 @@
           system = "x86_64-linux";
           specialArgs = specialArgs // args;
           modules = [
-            ./wsl
+            ./wsl/default.nix
 
             inputs.home-manager.nixosModules.home-manager
             {

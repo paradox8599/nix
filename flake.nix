@@ -17,7 +17,7 @@
       debug = true;
       systems = [ "x86_64-linux" ];
       imports = [
-        ./hosts
+        ./hosts/default.nix
       ];
     };
 }
