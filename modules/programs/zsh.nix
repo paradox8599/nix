@@ -20,6 +20,8 @@
       	  rm -f -- "$tmp"
         }
 
+        rm -f ~/.nix-profile
+
         [ -z "$TMUX" ] && cd ~
     '';
 
