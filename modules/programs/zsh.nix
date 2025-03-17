@@ -31,6 +31,7 @@
       la = "l --all --header";
       ll = "l --header";
       nh = "nix profile history --profile /nix/var/nix/profiles/system";
+      nhd = "sudo nix-collect-garbage -d";
       lg = "lazygit";
       ldk = "lazydocker";
       rb = "sudo nixos-rebuild --flake ~/.config/nixos";
