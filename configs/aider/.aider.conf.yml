@@ -12,7 +12,8 @@ alias:
   - "r1pro:openai/deepseek-ai/DeepSeek-R1:pro"
   - "r1turbo:openai/deepseek-ai/DeepSeek-R1:turbo"
   - "r1:openai/deepseek-ai/DeepSeek-R1"
-  - "v3:openai/deepseek-ai/DeepSeek-V3"
+  - "v3:openai/deepseek-ai/DeepSeek-V3-0324"
+  - "v3o:openai/deepseek-ai/DeepSeek-V3"
   - "qwq:openai/Qwen/QwQ-32B"
   - "qweni:openai/Qwen/Qwen2.5-72B-Instruct"
 
@@ -52,7 +53,7 @@ openai-api-base: https://liftai.icu/v1
 
 ## Set an API key for a provider (eg: --api-key provider=<key> sets PROVIDER_API_KEY=<key>)
 # api-key:
-  # - openai=
+# - openai=
 
 #################
 # Model settings:
@@ -211,7 +212,6 @@ attribute-author: true
 
 ## Attribute aider commits in the git committer name (default: True)
 attribute-committer: false
-
 ## Prefix commit messages with 'aider: ' if aider authored the changes (default: False)
 #attribute-commit-message-author: false
 

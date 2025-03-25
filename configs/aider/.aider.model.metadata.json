@@ -23,6 +23,12 @@
     "max_output_tokens": 8192,
     "mode": "chat"
   },
+  "openai/deepseek-ai/DeepSeek-V3-0324": {
+    "max_tokens": 8192,
+    "max_input_tokens": 65536,
+    "max_output_tokens": 8192,
+    "mode": "chat"
+  },
   "openai/Qwen/QwQ-32B": {
     "max_tokens": 8192,
     "max_input_tokens": 131072,
