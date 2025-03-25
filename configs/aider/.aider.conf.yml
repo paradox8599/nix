@@ -17,7 +17,7 @@ alias:
   - "qwq:openai/Qwen/QwQ-32B"
   - "qweni:openai/Qwen/Qwen2.5-72B-Instruct"
 
-model: r1pro
+model: v3
 
 ########################
 # API Keys and settings:
