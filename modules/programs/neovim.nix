@@ -1,5 +1,14 @@
-{ ... }:
+{ pkgs, ... }:
+
 {
+  home.packages = with pkgs; [
+    # nix plugin pack
+    nixd
+    deadnix
+    alejandra
+    nixfmt-rfc-style
+  ];
+
   programs.neovim = {
     enable = true;
     defaultEditor = true;

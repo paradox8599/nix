@@ -75,12 +75,6 @@
     rust-analyzer
     clippy
 
-    # neovim nix plugin pack
-    nixd
-    deadnix
-    alejandra
-    nixfmt-rfc-style
-
     # llm
     shell-gpt
   ];
