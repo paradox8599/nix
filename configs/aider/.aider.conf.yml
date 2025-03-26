@@ -13,11 +13,12 @@ alias:
   - "r1turbo:openai/deepseek-ai/DeepSeek-R1:turbo"
   - "r1:openai/deepseek-ai/DeepSeek-R1"
   - "v3:openai/deepseek-ai/DeepSeek-V3-0324"
-  - "v3o:openai/deepseek-ai/DeepSeek-V3"
+  - "v3ox:openai/deepseek-ai/DeepSeek-V3-0324:ox"
+  - "v3old:openai/deepseek-ai/DeepSeek-V3"
   - "qwq:openai/Qwen/QwQ-32B"
   - "qweni:openai/Qwen/Qwen2.5-72B-Instruct"
 
-model: v3
+model: v3ox
 
 ########################
 # API Keys and settings:
