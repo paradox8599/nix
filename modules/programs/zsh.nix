@@ -24,7 +24,7 @@
 
     envExtra = ''
       export DISPLAY=:0
-      export TERM=xterm-256color
+      [ -z "$TMUX" ] && export TERM=xterm-256color || export TERM=screen-256color
     '';
 
     shellAliases = {
