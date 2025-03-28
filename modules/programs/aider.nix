@@ -14,5 +14,10 @@
       enable = true;
       source = ../../configs/aider/.aider.model.metadata.json;
     };
+
+    file.".aider.model.settings.yml" = {
+      enable = true;
+      source = ../../configs/aider/.aider.model.settings.yml;
+    };
   };
 }
