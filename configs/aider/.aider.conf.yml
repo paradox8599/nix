@@ -12,16 +12,16 @@ alias:
   - "r1pro:openai/deepseek-ai/DeepSeek-R1:pro"
   - "r1turbo:openai/deepseek-ai/DeepSeek-R1:turbo"
   - "r1:openai/deepseek-ai/DeepSeek-R1"
-  - "v3:openai/deepseek-ai/DeepSeek-V3-0324"
-  - "v3ex:openai/deepseek-ai/DeepSeek-V3-0324:ex"
+  - "v3d:openai/deepseek-ai/DeepSeek-V3-0324"
+  - "v3:openai/deepseek-ai/DeepSeek-V3-0324:ex"
   - "qwq:openai/Qwen/QwQ-32B"
   - "qweni:openai/Qwen/Qwen2.5-72B-Instruct"
   - "gpro:openai/google/gemini-2.5-pro-exp-0325"
 
-model: v3ex
+model: gpro
 
 ## Specify the model to use for commit messages and chat history summarization (default depends on --model)
-weak-model: v3ex
+weak-model: v3
 
 ## Specify the model to use for editor tasks (default depends on --model)
 #editor-model: xxx
@@ -94,7 +94,6 @@ model-metadata-file: .aider.model.metadata.json
 
 ## Enable/disable automatic acceptance of architect changes (default: True)
 #auto-accept-architect: true
-
 
 ## Specify the edit format for the editor model (default: depends on editor model)
 #editor-edit-format: xxx
@@ -251,7 +250,7 @@ attribute-committer: false
 #  - zzz
 
 ## Enable/disable automatic linting after changes (default: True)
-#auto-lint: true
+auto-lint: false
 
 ## Specify command to run tests
 #test-cmd: xxx
@@ -351,13 +350,11 @@ attribute-committer: false
 ## specify a read-only file (can be used multiple times)
 #read: xxx
 ## Specify multiple values like this:
-#read:
-#  - xxx
-#  - yyy
-#  - zzz
+read:
+ - .cursorrules
 
 ## Use VI editing mode in the terminal (default: False)
-#vim: false
+vim: true
 
 ## Specify the language to use in the chat (default: None, uses system settings)
 #chat-language: xxx
