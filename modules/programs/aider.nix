@@ -1,8 +1,11 @@
 { pkgs, ... }:
 {
   home = {
-    packages = with pkgs; [
-      aider-chat.withPlaywright
+    packages = [
+      (pkgs.aider-chat.passthru.withOptional {
+        withPlaywright = true;
+        withHelp = true;
+      })
     ];
 
     file.".aider.conf.yml" = {
