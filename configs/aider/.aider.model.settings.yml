@@ -1,9 +1,32 @@
+- name: openai/google/gemini-2.5-pro-exp-0325
+  edit_format: diff-fenced
+
 - name: openai/deepseek-ai/DeepSeek-V3-0324
+  edit_format: diff
   use_temperature: true
   extra_params:
     temperature: 0.3
     top_p: 0.95
+
 - name: openai/Qwen/QwQ-32B
+  edit_format: diff
+  use_temperature: true
+  extra_params:
+    temperature: 0.6
+    top_p: 0.95
+
+- name: openai/Qwen/Qwen2.5-72B-Instruct
+  edit_format: diff
+
+- name: openai/deepseek-ai/DeepSeek-R1
+  edit_format: diff
+  use_temperature: true
+  extra_params:
+    temperature: 0.6
+    top_p: 0.95
+
+- name: openai/deepseek-ai/DeepSeek-R1:turbo
+  edit_format: diff
   use_temperature: true
   extra_params:
     temperature: 0.6
