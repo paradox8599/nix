@@ -3,11 +3,6 @@
   extra_params:
     temperature: 0.3
     top_p: 0.95
-- name: openai/deepseek-ai/DeepSeek-V3-0324:ex
-  use_temperature: true
-  extra_params:
-    temperature: 0.3
-    top_p: 0.95
 - name: openai/Qwen/QwQ-32B
   use_temperature: true
   extra_params:

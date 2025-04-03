@@ -9,14 +9,13 @@
 # https://aider.chat/docs/config/dotenv.html
 
 alias:
-  - "r1pro:openai/deepseek-ai/DeepSeek-R1:pro"
+  - "v3:openai/deepseek-ai/DeepSeek-V3-0324"
+  - "gpro:openai/google/gemini-2.5-pro-exp-0325"
+  - "r1:openai/deepseek-ai/DeepSeek-R1:pro"
   - "r1turbo:openai/deepseek-ai/DeepSeek-R1:turbo"
-  - "r1:openai/deepseek-ai/DeepSeek-R1"
-  - "v3d:openai/deepseek-ai/DeepSeek-V3-0324"
-  - "v3:openai/deepseek-ai/DeepSeek-V3-0324:ex"
+  - "r1o:openai/deepseek-ai/DeepSeek-R1"
   - "qwq:openai/Qwen/QwQ-32B"
   - "qweni:openai/Qwen/Qwen2.5-72B-Instruct"
-  - "gpro:openai/google/gemini-2.5-pro-exp-0325"
 
 model: gpro
 
@@ -351,11 +350,10 @@ auto-lint: false
 #read: xxx
 ## Specify multiple values like this:
 read:
- - .cursorrules
+  - .cursorrules
 
 ## Use VI editing mode in the terminal (default: False)
 vim: true
-
 ## Specify the language to use in the chat (default: None, uses system settings)
 #chat-language: xxx
 
