@@ -9,14 +9,14 @@
 # https://aider.chat/docs/config/dotenv.html
 
 alias:
-  - "v3:openai/deepseek-ai/DeepSeek-V3-0324"
   - "gpro:openai/google/gemini-2.5-pro-exp-0325"
+  - "v3:openai/deepseek-ai/DeepSeek-V3-0324"
   - "r1:openai/deepseek-ai/DeepSeek-R1"
   - "r1turbo:openai/deepseek-ai/DeepSeek-R1:turbo"
   - "qwq:openai/Qwen/QwQ-32B"
   - "qweni:openai/Qwen/Qwen2.5-72B-Instruct"
 
-model: v3
+model: gpro
 
 ## Specify the model to use for commit messages and chat history summarization (default depends on --model)
 weak-model: v3
@@ -248,7 +248,7 @@ attribute-committer: false
 #  - zzz
 
 ## Enable/disable automatic linting after changes (default: True)
-auto-lint: false
+# auto-lint: false
 
 ## Specify command to run tests
 #test-cmd: xxx
