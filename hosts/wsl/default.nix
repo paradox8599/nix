@@ -34,6 +34,7 @@
 
   nixpkgs = {
     config.allowUnfree = true;
+    config.allowUnfreePredicate = _: true;
     hostPlatform = "x86_64-linux";
   };
 
