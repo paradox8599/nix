@@ -69,11 +69,11 @@
     uv
 
     # rust
-    rustc
     cargo
-    rustfmt
-    rust-analyzer
-    clippy
+    # rustc
+    # rustfmt
+    # rust-analyzer
+    # clippy
 
     # llm
     shell-gpt
