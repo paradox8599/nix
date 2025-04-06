@@ -75,8 +75,5 @@
     # rustfmt
     # rust-analyzer
     # clippy
-
-    # llm
-    shell-gpt
   ];
 }
