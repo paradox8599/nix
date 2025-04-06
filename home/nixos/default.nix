@@ -36,6 +36,7 @@
     hyperfine
 
     nix-output-monitor
+    nix-inspect
 
     glow # markdown previewer in terminal
     fastfetch
