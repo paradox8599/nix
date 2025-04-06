@@ -76,9 +76,6 @@
       wslu
 
       home-manager
-
-      mpv
-      ffmpeg
     ];
 
   };
