@@ -1,10 +1,10 @@
 {
-  description = "A rust project";
+  description = "A proxy server that handles rotation of socks5 proxies and auth tokens for LLM providers.";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    rust-overlay.url = "github:oxalica/rust-overlay";
     flake-utils.url = "github:numtide/flake-utils";
+    rust-overlay.url = "github:oxalica/rust-overlay";
   };
 
   outputs =
@@ -17,16 +17,34 @@
     flake-utils.lib.eachDefaultSystem (
       system:
       let
-        name = "rust-project";
+        name = "lift-proxy";
+        version = "0.1.0";
+
         overlays = [ (import rust-overlay) ];
         pkgs = import nixpkgs { inherit system overlays; };
-        rustToolchain = pkgs.rust-bin.stable."1.85.0".default.override {
-          extensions = [
-            "rust-analyzer"
-            "clippy"
-            "rustfmt"
-          ];
-        };
+
+        nightly = false;
+        extensions = [
+          "clippy"
+          "rustfmt"
+          "rust-src"
+          "rust-docs"
+          "rust-analyzer"
+        ];
+
+        rustToolchain =
+          if nightly then
+            pkgs.rust-bin.selectLatestNightlyWith (
+              toolchain:
+              toolchain.default.override {
+                inherit extensions;
+              }
+            )
+          else
+            pkgs.rust-bin.stable."1.85.0".default.override {
+              inherit extensions;
+            };
+
         rustPlatform = pkgs.makeRustPlatform {
           cargo = rustToolchain;
           rustc = rustToolchain;
@@ -37,8 +55,10 @@
           inherit name;
           buildInputs = [
             rustToolchain
-            pkgs.pkg-config
             pkgs.openssl
+            pkgs.pkg-config
+            pkgs.cargo-shuttle
+            pkgs.sqlx-cli
           ];
 
           shellHook = '''';
@@ -46,7 +66,7 @@
 
         packages.default = rustPlatform.buildRustPackage {
           pname = name;
-          version = "0.1.0";
+          inherit version;
           src = ./.;
           cargoLock.lockFile = ./Cargo.lock;
 
@@ -56,6 +76,15 @@
 
           buildInputs = [
             pkgs.openssl
+          ];
+        };
+
+        nixConfig = {
+          extra-substituters = [
+            "https://paradox8599.cachix.org"
+          ];
+          extra-trusted-public-keys = [
+            "paradox8599.cachix.org-1:FSZWbtMzDFaWlyF+hi3yCl9o969EQkWnh33PTgnwNEg="
           ];
         };
       }
