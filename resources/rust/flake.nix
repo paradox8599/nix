@@ -35,10 +35,7 @@
         rustToolchain =
           if nightly then
             pkgs.rust-bin.selectLatestNightlyWith (
-              toolchain:
-              toolchain.default.override {
-                inherit extensions;
-              }
+              toolchain: toolchain.default.override { inherit extensions; }
             )
           else
             pkgs.rust-bin.stable."1.85.0".default.override {
