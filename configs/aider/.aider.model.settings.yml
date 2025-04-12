@@ -1,4 +1,4 @@
-- name: openai/openrouter/quasar-alpha
+- name: openai/openrouter/optimus-alpha
   edit_format: diff
   use_temperature: true
   extra_params:

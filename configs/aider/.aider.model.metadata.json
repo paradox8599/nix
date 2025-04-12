@@ -1,5 +1,5 @@
 {
-  "openai/openrouter/quasar-alpha": {
+  "openai/openrouter/optimus-alpha": {
     "max_tokens": 1000000,
     "max_input_tokens": 1000000,
     "max_output_tokens": 32768,
