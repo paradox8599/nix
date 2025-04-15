@@ -36,10 +36,10 @@
       nhd = "sudo nix-collect-garbage -d";
       lg = "lazygit";
       ldk = "lazydocker";
-      nrb = "sudo nixos-rebuild --flake ~/.config/nixos";
-      nrbv = "sudo nixos-rebuild --flake ~/.config/nixos --show-trace --print-build-logs --verbose";
-      ndiff = ''
-        nrb build && mv result result.old && nix flake update && nrb build &&
+      nr = "sudo nixos-rebuild --flake ~/.config/nixos";
+      nrv = "sudo nixos-rebuild --flake ~/.config/nixos --show-trace --print-build-logs --verbose";
+      nrup = ''
+        nr build && mv result result.old && nix flake update && nr build &&
         nix store diff-closures ./result.old ./result && rm result.old result
       '';
       t = ''[[ $(tmux ls 2>/dev/null | rg -v attached | wc -l) -gt 0 ]] && tmux attach -t $(tmux ls | rg -v attach | cut -d":" -f1 | tr "\n" " " | cut -d" " -f1) || tmux -u new-session -s main'';
