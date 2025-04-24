@@ -15,7 +15,7 @@
   outputs =
     inputs:
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-      debug = true;
+      debug = false;
       systems = [ "x86_64-linux" ];
       imports = [
         ./hosts/default.nix
