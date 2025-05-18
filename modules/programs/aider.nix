@@ -1,11 +1,8 @@
-{ inputs, pkgs, ... }:
-let 
-  apkgs = inputs.apkgs.legacyPackages.${pkgs.system};
-in
+{ pkgs, ... }:
 {
   home = {
     packages = [
-      (apkgs.aider-chat.passthru.withOptional {
+      (pkgs.aider-chat.passthru.withOptional {
         withPlaywright = true;
         withHelp = true;
       })
