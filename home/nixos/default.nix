@@ -75,5 +75,7 @@
     # rustfmt
     # rust-analyzer
     # clippy
+
+    yt-dlp
   ];
 }
