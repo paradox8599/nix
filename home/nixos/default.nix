@@ -68,6 +68,7 @@
     # deno
     python312
     uv
+    pnpm
 
     # rust
     cargo
