@@ -65,7 +65,7 @@
     sqlite
     nodejs_22
     bun
-    deno
+    # deno
     python312
     uv
 
