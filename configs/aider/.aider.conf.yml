@@ -9,14 +9,14 @@
 # https://aider.chat/docs/config/dotenv.html
 
 alias:
-  - "g:openai/google/gemini-2.5-pro-exp-0325"
+  - "r1:openai/deepseek-ai/DeepSeek-R1-0528"
   - "v3:openai/deepseek-ai/DeepSeek-V3-0324"
-  - "r1:openai/deepseek-ai/DeepSeek-R1"
+  - "r1o:openai/deepseek-ai/DeepSeek-R1"
   - "r1turbo:openai/deepseek-ai/DeepSeek-R1:turbo"
   - "qwq:openai/Qwen/QwQ-32B"
   - "qweni:openai/Qwen/Qwen2.5-72B-Instruct"
 
-model: g
+model: r1
 
 ## Specify the model to use for commit messages and chat history summarization (default depends on --model)
 weak-model: v3
@@ -115,7 +115,7 @@ model-metadata-file: .aider.model.metadata.json
 # Repomap settings:
 
 ## Suggested number of tokens to use for repo map, use 0 to disable
-map-tokens: 8192
+map-tokens: "8192"
 
 ## Control how often the repo map is refreshed. Options: auto, always, files, manual (default: auto)
 #map-refresh: auto
