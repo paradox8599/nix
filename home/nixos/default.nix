@@ -55,9 +55,9 @@
     mitmproxy
     mtr
 
-    devenv
     direnv
-    cachix
+    # devenv
+    # cachix
     # age # file encryption
     # sops # secrets manager
 
