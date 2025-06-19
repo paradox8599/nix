@@ -1,25 +1,25 @@
 {
-  "openai/google/gemini-2.5-pro-exp-0325": {
-    "max_tokens": 1000000,
-    "max_input_tokens": 1000000,
-    "max_output_tokens": 65536,
+  "openai/deepseek-ai/DeepSeek-R1-0528": {
+    "max_tokens": 64000,
+    "max_input_tokens": 64000,
+    "max_output_tokens": 64000,
     "mode": "chat"
   },
   "openai/deepseek-ai/DeepSeek-V3-0324": {
-    "max_tokens": 8192,
-    "max_input_tokens": 65536,
+    "max_tokens": 64000,
+    "max_input_tokens": 64000,
     "max_output_tokens": 8192,
     "mode": "chat"
   },
   "openai/Qwen/QwQ-32B": {
-    "max_tokens": 8192,
+    "max_tokens": 131072,
     "max_input_tokens": 131072,
     "max_output_tokens": 8192,
     "mode": "chat"
   },
   "openai/deepseek-ai/DeepSeek-R1": {
-    "max_tokens": 8192,
-    "max_input_tokens": 65536,
+    "max_tokens": 64000,
+    "max_input_tokens": 64000,
     "max_output_tokens": 8192,
     "mode": "chat"
   },
