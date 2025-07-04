@@ -1,37 +1,21 @@
-- name: openai/deepseek-ai/DeepSeek-R1-0528
+- name: openai/DeepSeek-R1-0528
   edit_format: diff
   use_temperature: true
   extra_params:
     temperature: 0.6
     top_p: 0.95
 
-- name: openai/deepseek-ai/DeepSeek-V3-0324
+- name: openai/DeepSeek-V3-0324
   edit_format: diff
   use_temperature: true
   extra_params:
     temperature: 0.3
     top_p: 0.95
 
-- name: openai/Qwen/QwQ-32B
+- name: openai/DeepSeek-R1
   edit_format: diff
   use_temperature: true
   extra_params:
     temperature: 0.6
     top_p: 0.95
 
-- name: openai/Qwen/Qwen2.5-72B-Instruct
-  edit_format: diff
-
-- name: openai/deepseek-ai/DeepSeek-R1
-  edit_format: diff
-  use_temperature: true
-  extra_params:
-    temperature: 0.6
-    top_p: 0.95
-
-- name: openai/deepseek-ai/DeepSeek-R1:turbo
-  edit_format: diff
-  use_temperature: true
-  extra_params:
-    temperature: 0.6
-    top_p: 0.95
