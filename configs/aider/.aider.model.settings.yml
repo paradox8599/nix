@@ -19,3 +19,5 @@
     temperature: 0.6
     top_p: 0.95
 
+# - name: openai/cypher-alpha
+#   edit_format: diff
