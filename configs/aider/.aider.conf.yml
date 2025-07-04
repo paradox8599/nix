@@ -12,6 +12,7 @@ alias:
   - "r1:openai/DeepSeek-R1-0528"
   - "v3:openai/DeepSeek-V3-0324"
   - "r1o:openai/DeepSeek-R1"
+  - "or:openai/cypher-alpha"
 
 model: r1
 
