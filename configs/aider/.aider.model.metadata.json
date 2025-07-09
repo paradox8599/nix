@@ -11,13 +11,31 @@
     "max_output_tokens": 8192,
     "mode": "chat"
   },
-  "openai/DeepSeek-R1": {
-    "max_tokens": 64000,
-    "max_input_tokens": 64000,
-    "max_output_tokens": 8192,
+  "openai/cypher-alpha": {
+    "max_tokens": 1000000,
+    "max_input_tokens": 1000000,
+    "max_output_tokens": 1000000,
     "mode": "chat"
   },
-  "openai/cypher-alpha": {
+  "openai/gemini-2.5-pro": {
+    "max_tokens": 1000000,
+    "max_input_tokens": 1000000,
+    "max_output_tokens": 1000000,
+    "mode": "chat"
+  },
+  "openai/gemini-2.5-pro-preview-06-05": {
+    "max_tokens": 1000000,
+    "max_input_tokens": 1000000,
+    "max_output_tokens": 1000000,
+    "mode": "chat"
+  },
+  "openai/gemini-2.5-flash": {
+    "max_tokens": 1000000,
+    "max_input_tokens": 1000000,
+    "max_output_tokens": 1000000,
+    "mode": "chat"
+  },
+  "openai/gemini-2.5-flash-preview-05-20": {
     "max_tokens": 1000000,
     "max_input_tokens": 1000000,
     "max_output_tokens": 1000000,
