@@ -11,6 +11,8 @@
 alias:
   - "r1:openai/DeepSeek-R1-0528"
   - "v3:openai/DeepSeek-V3-0324"
+  - "dr1:openai/DeepSeek-R1-0528-d"
+  - "dv3:openai/DeepSeek-V3-0324-d"
   - "or:openai/cypher-alpha"
   - "gp:openai/gemini-2.5-pro"
   - "gf:openai/gemini-2.5-flash"
