@@ -54,6 +54,14 @@
       bind 'v' split-window -v -c "#{pane_current_path}"
       bind 'h' split-window -h -c "#{pane_current_path}"
 
+      # auto determine split direction
+      bind 'i' run-shell " \
+        if [ $(( \$(tmux display -p '8*#{pane_width}-20*#{pane_height}') )) -lt 0 ]; then \
+          tmux splitw -v -c '#{pane_current_path}'; \
+        else \
+          tmux splitw -h -c '#{pane_current_path}'; \
+        fi"
+
       # suggested by vim-tpipeline
       set -g focus-events on
       # set -g status-style bg=default
