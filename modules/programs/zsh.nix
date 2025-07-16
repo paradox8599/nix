@@ -42,7 +42,7 @@
         nr build && mv result result.old && nix flake update && nr build &&
         nix store diff-closures ./result.old ./result && rm result.old result
       '';
-      t = ''[[ $(tmux ls 2>/dev/null | rg -v attached | wc -l) -gt 0 ]] && tmux attach -t $(tmux ls | rg -v attach | cut -d":" -f1 | tr "\n" " " | cut -d" " -f1) || tmux -u new-session -s main'';
+      t = ''[[ $(tmux ls 2>/dev/null | rg attached | wc -l) -gt 0 ]] && tmux attach -t $(tmux ls | rg attach | cut -d":" -f1 | tr "\n" " " | cut -d" " -f1) || tmux -u new-session -s main'';
       tl = "tmux ls 2>/dev/null";
       docker = "/usr/bin/docker";
     };
