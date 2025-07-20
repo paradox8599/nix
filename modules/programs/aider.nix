@@ -1,3 +1,4 @@
+# set OPENAI_API_KEY in ~/.env
 { inputs, pkgs, ... }:
 let
   pkgs-aider = inputs.nixpkgs-aider.legacyPackages.${pkgs.system};
