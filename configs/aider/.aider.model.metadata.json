@@ -1,4 +1,10 @@
 {
+  "openai/kimi-k2": {
+    "max_tokens": 65536,
+    "max_input_tokens": 64000,
+    "max_output_tokens": 64000,
+    "mode": "chat"
+  },
   "openai/DeepSeek-R1-0528": {
     "max_tokens": 64000,
     "max_input_tokens": 64000,

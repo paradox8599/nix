@@ -9,6 +9,7 @@
 # https://aider.chat/docs/config/dotenv.html
 
 alias:
+  - "k2:openai/kimi-k2"
   - "r1:openai/DeepSeek-R1-0528"
   - "v3:openai/DeepSeek-V3-0324"
   - "dr1:openai/DeepSeek-R1-0528-d"
