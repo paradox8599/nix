@@ -10,6 +10,7 @@
 
 alias:
   - "qw:openai/qwen3-235b-a22b"
+  - "qc:openai/qwen3-coder"
   - "k2:openai/kimi-k2"
   - "r1:openai/DeepSeek-R1-0528"
   - "v3:openai/DeepSeek-V3-0324"
