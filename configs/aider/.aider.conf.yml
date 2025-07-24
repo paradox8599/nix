@@ -19,13 +19,13 @@ alias:
   - "gp:openai/gemini-2.5-pro"
   - "gf:openai/gemini-2.5-flash"
 
-model: v3
+model: qc
 
 ## Specify the model to use for commit messages and chat history summarization (default depends on --model)
-weak-model: v3
+weak-model: qc
 
 ## Specify the model to use for editor tasks (default depends on --model)
-editor-model: v3
+editor-model: qc
 
 ## Specify what edit format the LLM should use (default depends on model)
 #edit-format: xxx
