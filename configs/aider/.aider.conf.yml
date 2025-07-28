@@ -15,8 +15,6 @@ alias:
   - "k2:openai/kimi-k2"
   - "r1:openai/DeepSeek-R1-0528"
   - "v3:openai/DeepSeek-V3-0324"
-  - "dr1:openai/DeepSeek-R1-0528-d"
-  - "dv3:openai/DeepSeek-V3-0324-d"
   - "gp:openai/gemini-2.5-pro"
   - "gf:openai/gemini-2.5-flash"
 
