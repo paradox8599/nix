@@ -1,16 +1,16 @@
 # set OPENAI_API_KEY in ~/.env
 { 
-  # inputs,
+  inputs,
   pkgs,
   ...
 }:
 let
-  # pkgs-aider = inputs.nixpkgs-aider.legacyPackages.${pkgs.system};
+  pkgs-aider = inputs.nixpkgs-aider.legacyPackages.${pkgs.system};
 in
 {
   home = {
     packages = [
-      (pkgs.aider-chat.passthru.withOptional {
+      (pkgs-aider.aider-chat.passthru.withOptional {
         withPlaywright = true;
         withHelp = true;
       })
