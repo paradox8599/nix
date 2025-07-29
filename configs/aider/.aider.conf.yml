@@ -9,6 +9,7 @@
 # https://aider.chat/docs/config/dotenv.html
 
 alias:
+  - "glm:openai/GLM-4.5"
   - "qt:openai/qwen3-235b-a22b-thinking"
   - "qw:openai/qwen3-235b-a22b"
   - "qc:openai/qwen3-coder"
@@ -18,13 +19,13 @@ alias:
   - "gp:openai/gemini-2.5-pro"
   - "gf:openai/gemini-2.5-flash"
 
-model: qc
+model: gp
 
 ## Specify the model to use for commit messages and chat history summarization (default depends on --model)
 weak-model: qc
 
 ## Specify the model to use for editor tasks (default depends on --model)
-editor-model: qc
+editor-model: gp
 
 ## Specify what edit format the LLM should use (default depends on model)
 #edit-format: xxx

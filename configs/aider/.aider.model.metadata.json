@@ -1,4 +1,10 @@
 {
+  "openai/GLM-4.5": {
+    "max_tokens": 128000,
+    "max_input_tokens": 128000,
+    "max_output_tokens": 128000,
+    "mode": "chat"
+  },
   "openai/qwen3-235b-a22b-thinking": {
     "max_tokens": 262144,
     "max_input_tokens": 177804,
