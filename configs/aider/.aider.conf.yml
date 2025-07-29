@@ -22,7 +22,7 @@ alias:
 model: gp
 
 ## Specify the model to use for commit messages and chat history summarization (default depends on --model)
-weak-model: qc
+weak-model: gp
 
 ## Specify the model to use for editor tasks (default depends on --model)
 editor-model: gp
