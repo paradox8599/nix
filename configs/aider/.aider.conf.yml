@@ -27,6 +27,8 @@ weak-model: glm
 ## Specify the model to use for editor tasks (default depends on --model)
 editor-model: gp
 
+chat-mode: ask
+
 ## Specify what edit format the LLM should use (default depends on model)
 #edit-format: xxx
 
