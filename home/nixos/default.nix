@@ -78,5 +78,7 @@
     # clippy
 
     yt-dlp
+
+    gemini-cli
   ];
 }
