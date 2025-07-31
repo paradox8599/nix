@@ -7,6 +7,11 @@
     syntaxHighlighting.enable = true;
 
     profileExtra = ''
+      # Source local environment variables if the file exists
+      if [ -f "$HOME/.zsh_local" ]; then
+        . "$HOME/.zsh_local"
+      fi
+
       # yazi set cwd when navigate
       function y() {
       	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
