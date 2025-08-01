@@ -48,3 +48,6 @@
 
 - name: openai/gemini-2.5-flash
   edit_format: diff-fenced
+
+- name: openai/gemini-2.5-flash-lite
+  edit_format: diff-fenced

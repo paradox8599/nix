@@ -18,14 +18,15 @@ alias:
   - "v3:openai/DeepSeek-V3-0324"
   - "gp:openai/gemini-2.5-pro"
   - "gf:openai/gemini-2.5-flash"
+  - "gfl:openai/gemini-2.5-flash-lite"
 
 model: gp
 
 ## Specify the model to use for commit messages and chat history summarization (default depends on --model)
-weak-model: glm
+weak-model: gfl
 
 ## Specify the model to use for editor tasks (default depends on --model)
-editor-model: gp
+## editor-model: gp
 
 chat-mode: ask
 
