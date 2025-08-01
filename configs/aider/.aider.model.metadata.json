@@ -41,6 +41,12 @@
     "max_output_tokens": 32768,
     "mode": "chat"
   },
+  "openai/openrouter": {
+    "max_tokens": 256000,
+    "max_input_tokens": 256000,
+    "max_output_tokens": 128000,
+    "mode": "chat"
+  },
   "openai/gemini-2.5-pro": {
     "max_tokens": 1048576,
     "max_input_tokens": 1048576,

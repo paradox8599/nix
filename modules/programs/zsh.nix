@@ -33,8 +33,8 @@
     '';
 
     shellAliases = {
-      ls = "exa";
-      l = "exa --long --icons --sort=type --group";
+      ls = "eza";
+      l = "eza --long --icons --sort=type --group";
       la = "l --all --header";
       ll = "l --header";
       nh = "nix profile history --profile /nix/var/nix/profiles/system";
