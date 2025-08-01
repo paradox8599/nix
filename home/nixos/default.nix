@@ -16,6 +16,10 @@
     ../../modules/programs/zsh.nix
   ];
 
+  home.sessionVariables = {
+    SSL_CERT_FILE = "/etc/ssl/certs/ca-certificates.crt";
+  };
+
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     ripgrep

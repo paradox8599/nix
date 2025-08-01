@@ -55,6 +55,7 @@
     };
 
     systemPackages = with pkgs; [
+      cacert
       gcc
       pkg-config
       openssl
