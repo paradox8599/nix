@@ -22,13 +22,12 @@
       	rm -f -- "$tmp"
       }
 
-      rm -f ~/.nix-profile
-
-      [ -z "$TMUX" ] && cd ~ && ([[ $(tmux ls 2>/dev/null | rg -v attached | wc -l) -gt 0 ]] && tmux attach -t $(tmux ls | rg -v attach | cut -d":" -f1 | tr "\n" " " | cut -d" " -f1) || tmux -u new-session)
+      if [ -t 1 ] && [ -z "$TMUX" ] && [ -z "$NO_TMUX" ]; then
+        cd ~ && ([[ $(tmux ls 2>/dev/null | rg -v attached | wc -l) -gt 0 ]] && tmux attach -t $(tmux ls | rg -v attach | cut -d":" -f1 | tr "\n" " " | cut -d" " -f1) || tmux -u new-session)
+      fi
     '';
 
     envExtra = ''
-      export DISPLAY=:0
       [ -z "$TMUX" ] && export TERM=xterm-256color || export TERM=screen-256color
     '';
 
@@ -49,7 +48,6 @@
       '';
       t = ''[[ $(tmux ls 2>/dev/null | rg -v attached | wc -l) -gt 0 ]] && tmux attach -t $(tmux ls | rg -v attach | cut -d":" -f1 | tr "\n" " " | cut -d" " -f1) || tmux -u new-session'';
       tl = "tmux ls 2>/dev/null";
-      docker = "/usr/bin/docker";
     };
   };
 }

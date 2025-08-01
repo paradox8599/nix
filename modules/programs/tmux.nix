@@ -39,6 +39,9 @@
       set -ga update-environment TERM
       set -ga update-environment TERM_PROGRAM
 
+      set -g history-limit 100000
+      set -g @continuum-restore 'on'
+      set -g @continuum-save-interval '15'
       set -g @catppuccin_flavour 'mocha' # frappe, macchiato, mocha, latte
 
       # hjkl to select and y to copy in copy mode
