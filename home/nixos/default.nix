@@ -22,6 +22,7 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
+    (writeShellScriptBin "claude" (builtins.readFile ./scripts/claude))
     ripgrep
     jq
     fzf
