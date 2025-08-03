@@ -61,7 +61,6 @@
 
     direnv
     # devenv
-    # cachix
     # age # file encryption
     # sops # secrets manager
 

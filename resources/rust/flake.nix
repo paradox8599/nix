@@ -75,15 +75,6 @@
             pkgs.openssl
           ];
         };
-
-        nixConfig = {
-          extra-substituters = [
-            "https://paradox8599.cachix.org"
-          ];
-          extra-trusted-public-keys = [
-            "paradox8599.cachix.org-1:FSZWbtMzDFaWlyF+hi3yCl9o969EQkWnh33PTgnwNEg="
-          ];
-        };
       }
     );
 }

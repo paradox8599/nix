@@ -24,7 +24,7 @@
         "nix-command"
         "flakes"
       ];
-      # allows devenv to set cachix
+
       trusted-users = [
         "root"
         username
