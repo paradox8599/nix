@@ -48,6 +48,7 @@
       '';
       t = ''[[ $(tmux ls 2>/dev/null | rg -v attached | wc -l) -gt 0 ]] && tmux attach -t $(tmux ls | rg -v attach | cut -d":" -f1 | tr "\n" " " | cut -d" " -f1) || tmux -u new-session'';
       tl = "tmux ls 2>/dev/null";
+      g = "pnpx @google/gemini-cli";
     };
   };
 }
