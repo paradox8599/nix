@@ -1,9 +1,5 @@
 { pkgs, username, ... }:
 {
-  home.username = username;
-  home.homeDirectory = "/home/${username}";
-  home.stateVersion = "24.11";
-
   imports = [
     ../../modules/programs/aider.nix
     ../../modules/programs/direnv.nix
@@ -16,71 +12,83 @@
     ../../modules/programs/zsh.nix
   ];
 
-  home.sessionVariables = {
-    SSL_CERT_FILE = "/etc/ssl/certs/ca-certificates.crt";
+  home = {
+    username = username;
+    homeDirectory = "/home/${username}";
+    stateVersion = "24.11";
+
+    sessionVariables = {
+      SSL_CERT_FILE = "/etc/ssl/certs/ca-certificates.crt";
+    };
+
+    sessionPath = [
+      "/usr/bin"
+    ];
+
+    # Packages that should be installed to the user profile.
+    packages = with pkgs; [
+      (writeShellScriptBin "claude" (builtins.readFile ./scripts/claude))
+      ripgrep
+      jq
+      fzf
+      fd
+      xxd
+      diff-so-fancy
+      nmap
+      eza
+      tlrc
+      yazi
+      dust
+      sad
+      lazygit
+      lazydocker
+      flyctl
+      hyperfine
+
+      nix-output-monitor
+      nix-inspect
+
+      glow # markdown previewer in terminal
+      fastfetch
+      just
+
+      bottom
+      iotop # io monitoring
+      iftop # network monitoring
+      # system call monitoring
+      strace # system call monitoring
+      ltrace # library call monitoring
+      lsof # list open files
+      # system tools
+      pciutils # lspci
+      usbutils # lsusb
+      mitmproxy
+      mtr
+
+      direnv
+      # devenv
+      # age # file encryption
+      # sops # secrets manager
+
+      # common dev deps
+      sqlite
+      nodejs_22
+      bun
+      # deno
+      python312
+      uv
+      pnpm
+
+      # rust
+      cargo
+      # rustc
+      # rustfmt
+      # rust-analyzer
+      # clippy
+
+      yt-dlp
+    ];
+
   };
 
-  # Packages that should be installed to the user profile.
-  home.packages = with pkgs; [
-    (writeShellScriptBin "claude" (builtins.readFile ./scripts/claude))
-    ripgrep
-    jq
-    fzf
-    fd
-    xxd
-    diff-so-fancy
-    nmap
-    eza
-    tlrc
-    yazi
-    dust
-    sad
-    lazygit
-    lazydocker
-    flyctl
-    hyperfine
-
-    nix-output-monitor
-    nix-inspect
-
-    glow # markdown previewer in terminal
-    fastfetch
-    just
-
-    bottom
-    iotop # io monitoring
-    iftop # network monitoring
-    # system call monitoring
-    strace # system call monitoring
-    ltrace # library call monitoring
-    lsof # list open files
-    # system tools
-    pciutils # lspci
-    usbutils # lsusb
-    mitmproxy
-    mtr
-
-    direnv
-    # devenv
-    # age # file encryption
-    # sops # secrets manager
-
-    # common dev deps
-    sqlite
-    nodejs_22
-    bun
-    # deno
-    python312
-    uv
-    pnpm
-
-    # rust
-    cargo
-    # rustc
-    # rustfmt
-    # rust-analyzer
-    # clippy
-
-    yt-dlp
-  ];
 }
