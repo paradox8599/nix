@@ -21,10 +21,6 @@
       SSL_CERT_FILE = "/etc/ssl/certs/ca-certificates.crt";
     };
 
-    sessionPath = [
-      "/usr/bin"
-    ];
-
     # Packages that should be installed to the user profile.
     packages = with pkgs; [
       (writeShellScriptBin "claude" (builtins.readFile ./scripts/claude))

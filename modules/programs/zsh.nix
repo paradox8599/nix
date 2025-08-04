@@ -28,6 +28,7 @@
     '';
 
     envExtra = ''
+      export PATH="/usr/bin:$PATH"
       [ -z "$TMUX" ] && export TERM=xterm-256color || export TERM=screen-256color
     '';
 
