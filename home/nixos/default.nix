@@ -71,7 +71,7 @@
 
       # common dev deps
       sqlite
-      nodejs_22
+      nodejs_24
       bun
       # deno
       python312
