@@ -23,7 +23,10 @@
 
     # Packages that should be installed to the user profile.
     packages = with pkgs; [
+      (writeShellScriptBin "gemini" (builtins.readFile ./scripts/gemini))
       (writeShellScriptBin "claude" (builtins.readFile ./scripts/claude))
+      (writeShellScriptBin "ccr" (builtins.readFile ./scripts/ccr))
+
       ripgrep
       jq
       fzf

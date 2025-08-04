@@ -1,1 +1,1 @@
-pnpx @anthropic-ai/claude-code
+pnpx @anthropic-ai/claude-code "$@"
