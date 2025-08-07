@@ -15,6 +15,7 @@
         system = "x86_64-linux";
         modules = [
           ./wsl/default.nix
+          ../modules/services/podman.nix
 
           inputs.home-manager.nixosModules.home-manager
           {
