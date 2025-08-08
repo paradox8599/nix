@@ -5,19 +5,7 @@
     "max_output_tokens": 128000,
     "mode": "chat"
   },
-  "openai/qwen3-235b-a22b-thinking": {
-    "max_tokens": 262144,
-    "max_input_tokens": 177804,
-    "max_output_tokens": 94372,
-    "mode": "chat"
-  },
   "openai/qwen3-coder": {
-    "max_tokens": 262144,
-    "max_input_tokens": 177804,
-    "max_output_tokens": 94372,
-    "mode": "chat"
-  },
-  "openai/qwen3-235b-a22b": {
     "max_tokens": 262144,
     "max_input_tokens": 177804,
     "max_output_tokens": 94372,

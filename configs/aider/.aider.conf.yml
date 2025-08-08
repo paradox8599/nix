@@ -10,8 +10,6 @@
 
 alias:
   - "glm:openai/GLM-4.5"
-  - "qt:openai/qwen3-235b-a22b-thinking"
-  - "qw:openai/qwen3-235b-a22b"
   - "qc:openai/qwen3-coder"
   - "k2:openai/kimi-k2"
   - "r1:openai/DeepSeek-R1-0528"
