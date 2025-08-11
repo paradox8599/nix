@@ -22,8 +22,8 @@
       	rm -f -- "$tmp"
       }
 
-      if [ -t 1 ] && [ -z "$TMUX" ] && [ -z "$NO_TMUX" ]; then
-        cd ~ && ([[ $(tmux ls 2>/dev/null | rg -v attached | wc -l) -gt 0 ]] && tmux attach -t $(tmux ls | rg -v attach | cut -d":" -f1 | tr "\n" " " | cut -d" " -f1) || tmux -u new-session)
+      if [ -t 1 ]; then
+        cd ~
       fi
     '';
 
