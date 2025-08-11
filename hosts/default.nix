@@ -7,7 +7,8 @@
   flake.nixosConfigurations =
     let
       username = "nixos";
-      specialArgs = { inherit inputs username; };
+      stateVersion = "24.11";
+      specialArgs = { inherit inputs username stateVersion; };
     in
     {
       wsl = inputs.nixpkgs.lib.nixosSystem {

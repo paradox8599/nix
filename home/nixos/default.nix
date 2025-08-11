@@ -1,4 +1,9 @@
-{ pkgs, username, ... }:
+{
+  pkgs,
+  username,
+  stateVersion,
+  ...
+}:
 {
   imports = [
     ../../modules/programs/aider.nix
@@ -13,9 +18,8 @@
   ];
 
   home = {
-    username = username;
+    inherit username stateVersion;
     homeDirectory = "/home/${username}";
-    stateVersion = "24.11";
 
     sessionVariables = {
       SSL_CERT_FILE = "/etc/ssl/certs/ca-certificates.crt";

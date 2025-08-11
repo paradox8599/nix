@@ -2,6 +2,7 @@
   inputs,
   pkgs,
   username,
+  stateVersion,
   ...
 }:
 {
@@ -9,7 +10,7 @@
     inputs.nixos-wsl.nixosModules.default
   ];
   networking.hostName = "wsl";
-  system.stateVersion = "24.11";
+  system.stateVersion = stateVersion;
   time.timeZone = "Australia/Sydney";
 
   nix = {
