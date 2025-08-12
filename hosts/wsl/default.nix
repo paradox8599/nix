@@ -109,8 +109,5 @@
 
   users = {
     defaultUserShell = pkgs.zsh;
-    users.${username}.openssh.authorizedKeys.keyFiles = [
-      ../../configs/ssh/authorized_keys
-    ];
   };
 }
