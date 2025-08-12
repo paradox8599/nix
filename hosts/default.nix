@@ -7,7 +7,7 @@
   flake.nixosConfigurations =
     let
       username = "nixos";
-      stateVersion = "24.11";
+      stateVersion = "25.05";
       specialArgs = { inherit inputs username stateVersion; };
     in
     {
