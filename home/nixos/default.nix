@@ -45,6 +45,7 @@
       sad
       lazygit
       lazydocker
+      lazysql
       flyctl
       hyperfine
 
