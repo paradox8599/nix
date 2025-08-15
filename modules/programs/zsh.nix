@@ -22,7 +22,7 @@
       	rm -f -- "$tmp"
       }
 
-      if [ -t 1 ]; then
+      if [ -t 1 ] && [ -z "$TMUX" ]; then
         cd ~
       fi
     '';
