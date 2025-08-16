@@ -28,6 +28,7 @@
     '';
 
     envExtra = ''
+      export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock
       export PATH="/usr/bin:$PATH"
       [ -z "$TMUX" ] && export TERM=xterm-256color || export TERM=screen-256color
     '';
