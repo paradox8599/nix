@@ -31,6 +31,7 @@
       (writeShellScriptBin "ccr" ''pnpx @musistudio/claude-code-router "$@"'')
       (writeShellScriptBin "claude" ''pnpx @anthropic-ai/claude-code "$@"'')
       (writeShellScriptBin "gemini" ''pnpx @google/gemini-cli "$@"'')
+      (writeShellScriptBin "xclip" ''cat | /mnt/c/Windows/System32/clip.exe'')
 
       ripgrep
       jq
