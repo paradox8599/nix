@@ -15,6 +15,7 @@
     ../../modules/programs/tmux.nix
     ../../modules/programs/zoxide.nix
     ../../modules/programs/zsh.nix
+    ../../modules/programs/opencode.nix
   ];
 
   home = {
@@ -27,9 +28,9 @@
 
     # Packages that should be installed to the user profile.
     packages = with pkgs; [
-      (writeShellScriptBin "gemini" (builtins.readFile ./scripts/gemini))
-      (writeShellScriptBin "claude" (builtins.readFile ./scripts/claude))
-      (writeShellScriptBin "ccr" (builtins.readFile ./scripts/ccr))
+      (writeShellScriptBin "ccr" ''pnpx @musistudio/claude-code-router "$@"'')
+      (writeShellScriptBin "claude" ''pnpx @anthropic-ai/claude-code "$@"'')
+      (writeShellScriptBin "gemini" ''pnpx @google/gemini-cli "$@"'')
 
       ripgrep
       jq
