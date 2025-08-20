@@ -41,6 +41,7 @@
       nh = "nix profile history --profile /nix/var/nix/profiles/system";
       nhd = "sudo nix-collect-garbage -d";
       lg = "lazygit";
+      lq = "lazysql";
       ldk = "lazydocker";
       nr = "sudo nixos-rebuild --flake ~/.config/nixos";
       nrv = "sudo nixos-rebuild --flake ~/.config/nixos --show-trace --print-build-logs --verbose";
