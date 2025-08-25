@@ -46,8 +46,9 @@
       nr = "sudo nixos-rebuild --flake ~/.config/nixos";
       nrv = "sudo nixos-rebuild --flake ~/.config/nixos --show-trace --print-build-logs --verbose";
       nrup = ''
+        sudo rm -f result.old result &&
         nr build && mv result result.old && nix flake update && nr build &&
-        nix store diff-closures ./result.old ./result && rm -f result.old result
+        nix store diff-closures ./result.old ./result && sudo rm -f result.old result
       '';
       t = ''[[ $(tmux ls 2>/dev/null | rg -v attached | wc -l) -gt 0 ]] && tmux attach -t $(tmux ls | rg -v attach | cut -d":" -f1 | tr "\n" " " | cut -d" " -f1) || tmux -u new-session'';
       tl = "tmux ls 2>/dev/null";
