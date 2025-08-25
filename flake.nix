@@ -1,7 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-aider.url = "github:NixOS/nixpkgs/fbcf476f790d8a217c3eab4e12033dc4a0f6d23c";
+    nixpkgs-aider.url = "github:NixOS/nixpkgs/20075955deac2583bb12f07151c2df830ef346b4";
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
     nix-darwin.url = "github:lnl7/nix-darwin";
