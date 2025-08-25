@@ -354,7 +354,7 @@ attribute-committer: false
 #read: xxx
 ## Specify multiple values like this:
 read:
-  - .cursorrules
+  - README.md
 
 ## Use VI editing mode in the terminal (default: False)
 vim: true
