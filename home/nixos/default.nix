@@ -9,7 +9,6 @@
     ../../modules/programs/aider.nix
     ../../modules/programs/direnv.nix
     ../../modules/programs/git.nix
-    ../../modules/programs/gitui.nix
     ../../modules/programs/neovim.nix
     ../../modules/programs/starship.nix
     ../../modules/programs/tmux.nix
@@ -62,17 +61,16 @@
       iotop # io monitoring
       iftop # network monitoring
       # system call monitoring
-      strace # system call monitoring
-      ltrace # library call monitoring
+      # strace # system call monitoring
+      # ltrace # library call monitoring
       lsof # list open files
       # system tools
       pciutils # lspci
-      usbutils # lsusb
-      mitmproxy
+      # usbutils # lsusb
+      # mitmproxy
       mtr
 
       direnv
-      # devenv
       # age # file encryption
       # sops # secrets manager
 
@@ -81,12 +79,11 @@
       nodejs_24
       bun
       # deno
-      python312
       uv
       pnpm
-
+      # python312
+      # cargo
       # rust
-      cargo
       # rustc
       # rustfmt
       # rust-analyzer
