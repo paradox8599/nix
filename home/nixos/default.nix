@@ -79,9 +79,9 @@
       nodejs_24
       bun
       # deno
-      uv
       pnpm
-      # python312
+      uv
+      python313
       # cargo
       # rust
       # rustc

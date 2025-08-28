@@ -34,7 +34,6 @@
     '';
 
     shellAliases = {
-      ls = "eza";
       l = "eza --long --icons --sort=type --group";
       la = "l --all --header";
       ll = "l --header";
