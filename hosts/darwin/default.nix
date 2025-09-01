@@ -4,6 +4,10 @@
   username,
   ...
 }: {
+  users.users.${username} = {
+    name = username;
+    home = "/Users/${username}";
+  };
   nixpkgs.hostPlatform = "aarch64-darwin";
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog

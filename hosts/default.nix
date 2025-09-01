@@ -2,10 +2,11 @@
   self,
   inputs,
   ...
-}: {
+}: let
+  stateVersion = "25.05";
+in {
   flake.nixosConfigurations = let
     username = "nixos";
-    stateVersion = "25.05";
     specialArgs = {inherit inputs username stateVersion;};
   in {
     wsl = inputs.nixpkgs.lib.nixosSystem {
@@ -28,20 +29,20 @@
 
   flake.darwinConfigurations = let
     username = "para";
-    specialArgs = {inherit inputs username;};
+    specialArgs = {inherit inputs username stateVersion;};
   in {
     darwin = inputs.nix-darwin.lib.darwinSystem {
       inherit specialArgs;
       modules = [
         ./darwin/default.nix
 
-        # inputs.home-manager.nixosModules.home-manager
-        # {
-        #   home-manager.useGlobalPkgs = true;
-        #   home-manager.useUserPackages = true;
-        #   home-manager.extraSpecialArgs = specialArgs;
-        #   home-manager.users.${username} = import "${self}/home/${username}";
-        # }
+        inputs.home-manager.darwinModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = specialArgs;
+          home-manager.users.${username} = import "${self}/home/${username}";
+        }
       ];
     };
   };
