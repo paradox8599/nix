@@ -6,14 +6,14 @@
 }:
 {
   imports = [
-    # ../../modules/programs/aider.nix
+    ../../modules/programs/zsh.nix
+    ../../modules/programs/tmux.nix
     ../../modules/programs/direnv.nix
     ../../modules/programs/git.nix
     ../../modules/programs/neovim.nix
     ../../modules/programs/starship.nix
-    ../../modules/programs/tmux.nix
     ../../modules/programs/zoxide.nix
-    # ../../modules/programs/zsh.nix
+    # ../../modules/programs/aider.nix
     # ../../modules/programs/opencode.nix
   ];
 

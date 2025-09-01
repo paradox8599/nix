@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   programs.zsh = {
     enable = true;
@@ -49,9 +49,26 @@
         nr build && mv result result.old && nix flake update && nr build &&
         nix store diff-closures ./result.old ./result && sudo rm -f result.old result
       '';
+      dr = "sudo darwin-rebuild --flake ~/.config/nix#darwin";
+      drv = "sudo darwin-rebuild --flake ~/.config/nix#darwin --show-trace --print-build-logs --verbose";
+      drup = ''
+        sudo rm -f ~/.config/nix/result.old ~/.config/nix/result &&
+        dr build &&
+        mv result result.old && nix flake update &&
+        dr build &&
+        nix store diff-closures ~/.config/nix/result.old ~/.config/nix/result &&
+        sudo rm -f ~/.config/nix/result.old ~/.config/nix/result
+      '';
+      ta = "tmux -u attach -t";
+      tn = "tmux -u new -s";
       t = ''[[ $(tmux ls 2>/dev/null | rg -v attached | wc -l) -gt 0 ]] && tmux attach -t $(tmux ls | rg -v attach | cut -d":" -f1 | tr "\n" " " | cut -d" " -f1) || tmux -u new-session'';
       tl = "tmux ls 2>/dev/null";
-      ga = "aider --commit";
+      ga = "git add . && aider --commit";
+      vi = "nvim";
     };
   };
+
+  home.packages = with pkgs; [
+    zimfw
+  ];
 }
