@@ -7,11 +7,6 @@
     syntaxHighlighting.enable = true;
 
     profileExtra = ''
-      # Source local environment variables if the file exists
-      if [ -f "$HOME/.zsh_local" ]; then
-        . "$HOME/.zsh_local"
-      fi
-
       # yazi set cwd when navigate
       function y() {
       	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -31,6 +26,10 @@
       export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock
       export PATH="/usr/bin:$PATH"
       [ -z "$TMUX" ] && export TERM=xterm-256color || export TERM=screen-256color
+
+      # Source local environment variables if the file exists
+      [ -f "$HOME/.zsh_local" ] && . "$HOME/.zsh_local"
+
     '';
 
     shellAliases = {

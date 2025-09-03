@@ -13,7 +13,7 @@
     ../../modules/programs/neovim.nix
     ../../modules/programs/starship.nix
     ../../modules/programs/zoxide.nix
-    # ../../modules/programs/aider.nix
+    ../../modules/programs/aider.nix
     # ../../modules/programs/opencode.nix
   ];
 
