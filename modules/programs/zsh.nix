@@ -6,7 +6,7 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
-    profileExtra = ''
+    initContent = ''
       # yazi set cwd when navigate
       function y() {
       	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
