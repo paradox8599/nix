@@ -25,7 +25,7 @@ in
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = specialArgs;
-            home-manager.users.${username} = import "${self}/home/${username}";
+            home-manager.users.${username} = import "${self}/home/wsl";
           }
         ];
       };
@@ -47,7 +47,7 @@ in
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = specialArgs;
-            home-manager.users.${username} = import "${self}/home/${username}";
+            home-manager.users.${username} = import "${self}/home/darwin";
           }
         ];
       };
