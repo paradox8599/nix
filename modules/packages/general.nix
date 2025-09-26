@@ -5,6 +5,7 @@
     (writeShellScriptBin "claude" ''pnpx @anthropic-ai/claude-code "$@"'')
     (writeShellScriptBin "gemini" ''pnpx @google/gemini-cli "$@"'')
 
+    gcc
     ripgrep
     jq
     fzf
