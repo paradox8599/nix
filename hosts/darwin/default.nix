@@ -49,6 +49,10 @@
     #
   ];
 
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+  ];
+
   programs = {
     # https://github.com/nix-community/nix-ld
     # nix-ld.enable = true;
