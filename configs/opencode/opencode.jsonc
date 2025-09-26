@@ -14,7 +14,7 @@
 			"name": "LiftAI",
 			"options": {
 				"baseURL": "https://liftai.icu/v1",
-				"apiKey": "{env:LIFTAI_API_KEY}"
+				"apiKey": "{env:OPENCODE_LIFTAI_API_KEY}"
 			},
 			"models": {
 				"gemini-2.5-pro": {
