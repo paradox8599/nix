@@ -6,6 +6,8 @@
 }:
 {
   imports = [
+    ../../modules/packages/general.nix
+
     ../../modules/programs/aider.nix
     ../../modules/programs/direnv.nix
     ../../modules/programs/git.nix
@@ -25,71 +27,8 @@
       SSL_CERT_FILE = "/etc/ssl/certs/ca-certificates.crt";
     };
 
-    # Packages that should be installed to the user profile.
     packages = with pkgs; [
-      (writeShellScriptBin "ccr" ''pnpx @musistudio/claude-code-router "$@"'')
-      (writeShellScriptBin "claude" ''pnpx @anthropic-ai/claude-code "$@"'')
-      (writeShellScriptBin "gemini" ''pnpx @google/gemini-cli "$@"'')
       (writeShellScriptBin "xclip" ''cat | /mnt/c/Windows/System32/clip.exe'')
-
-      ripgrep
-      jq
-      fzf
-      fd
-      xxd
-      diff-so-fancy
-      nmap
-      eza
-      tlrc
-      yazi
-      dust
-      sad
-      lazygit
-      lazydocker
-      lazysql
-      flyctl
-      hyperfine
-
-      nix-output-monitor
-      nix-inspect
-
-      glow # markdown previewer in terminal
-      fastfetch
-      just
-
-      bottom
-      iotop # io monitoring
-      iftop # network monitoring
-      # system call monitoring
-      # strace # system call monitoring
-      # ltrace # library call monitoring
-      lsof # list open files
-      # system tools
-      pciutils # lspci
-      # usbutils # lsusb
-      # mitmproxy
-      mtr
-
-      direnv
-      # age # file encryption
-      # sops # secrets manager
-
-      # common dev deps
-      sqlite
-      nodejs_24
-      bun
-      # deno
-      pnpm
-      uv
-      python313
-      # cargo
-      # rust
-      # rustc
-      # rustfmt
-      # rust-analyzer
-      # clippy
-
-      yt-dlp
     ];
 
   };
