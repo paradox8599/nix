@@ -6,6 +6,7 @@
 {
   programs.tmux = {
     enable = true;
+    shell = "${pkgs.zsh}/bin/zsh";
     shortcut = "a";
     # aggressiveResize = true; -- Disabled to be iTerm-friendly
     baseIndex = 1;
@@ -28,6 +29,8 @@
 
     extraConfig = ''
       set -g default-terminal "screen-256color"
+      set -g default-shell ${pkgs.zsh}/bin/zsh
+      set -g default-command ${pkgs.zsh}/bin/zsh
       set -ga terminal-overrides ",*256col*:Tc"
       set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q'
       set-environment -g COLORTERM "truecolor"
