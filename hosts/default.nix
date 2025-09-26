@@ -10,7 +10,7 @@ in
   flake.nixosConfigurations =
     let
       username = "nixos";
-      specialArgs = { inherit inputs username stateVersion; };
+      specialArgs = { inherit self inputs username stateVersion; };
     in
     {
       wsl = inputs.nixpkgs.lib.nixosSystem {
@@ -34,7 +34,7 @@ in
   flake.darwinConfigurations =
     let
       username = "para";
-      specialArgs = { inherit inputs username stateVersion; };
+      specialArgs = { inherit self inputs username stateVersion; };
     in
     {
       darwin = inputs.nix-darwin.lib.darwinSystem {

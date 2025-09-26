@@ -1,7 +1,8 @@
 # set OPENAI_API_KEY in ~/.env
-{ 
+{
   inputs,
   pkgs,
+  config,
   ...
 }:
 let
@@ -16,19 +17,16 @@ in
       })
     ];
 
-    file.".aider.conf.yml" = {
-      enable = true;
-      source = ../../configs/aider/.aider.conf.yml;
-    };
+    file.".aider.conf.yml".source = config.lib.file.mkOutOfStoreSymlink (
+      "${config.home.homeDirectory}/.config/nix/configs/aider/.aider.conf.yml"
+    );
 
-    file.".aider.model.metadata.json" = {
-      enable = true;
-      source = ../../configs/aider/.aider.model.metadata.json;
-    };
+    file.".aider.model.metadata.json".source = config.lib.file.mkOutOfStoreSymlink (
+      "${config.home.homeDirectory}/.config/nix/configs/aider/.aider.model.metadata.json"
+    );
 
-    file.".aider.model.settings.yml" = {
-      enable = true;
-      source = ../../configs/aider/.aider.model.settings.yml;
-    };
+    file.".aider.model.settings.yml".source = config.lib.file.mkOutOfStoreSymlink (
+      "${config.home.homeDirectory}/.config/nix/configs/aider/.aider.model.settings.yml"
+    );
   };
 }
