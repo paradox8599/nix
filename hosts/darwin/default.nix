@@ -52,7 +52,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
-
+    karabiner-elements
   ];
 
   programs = {

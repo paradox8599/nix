@@ -31,7 +31,6 @@
 
     packages = with pkgs; [
       google-chrome
-      karabiner-elements
     ];
   };
 
