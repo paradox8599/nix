@@ -10,6 +10,8 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     flake-parts.url = "github:hercules-ci/flake-parts";
     flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
+    mac-app-util.url = "github:hraban/mac-app-util";
+    mac-app-util.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =

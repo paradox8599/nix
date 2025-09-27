@@ -41,6 +41,7 @@ in
         inherit specialArgs;
         modules = [
           ./darwin/default.nix
+          inputs.mac-app-util.darwinModules.default
 
           inputs.home-manager.darwinModules.home-manager
           {
@@ -48,6 +49,9 @@ in
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = specialArgs;
             home-manager.users.${username} = import "${self}/home/darwin";
+            home-manager.sharedModules = [
+              inputs.mac-app-util.homeManagerModules.default
+            ];
           }
         ];
       };

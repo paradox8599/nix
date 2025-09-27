@@ -25,7 +25,8 @@
     envExtra = ''
       export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock
       # export PATH="$PATH:/usr/bin"
-      [ -z "$TMUX" ] && export TERM=xterm-256color || export TERM=screen-256color
+      export TERM=xterm-256color
+      # [ -z "$TMUX" ] && export TERM=xterm-256color || export TERM=screen-256color
 
       # Source local environment variables if the file exists
       [ -f "$HOME/.zsh_local" ] && . "$HOME/.zsh_local"

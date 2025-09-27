@@ -1,4 +1,5 @@
 {
+  lib,
   pkgs,
   username,
   stateVersion,
@@ -17,6 +18,7 @@
     ../../modules/programs/zoxide.nix
     ../../modules/programs/aider.nix
     ../../modules/programs/opencode.nix
+    ../../modules/programs/wezterm.nix
   ];
 
   home = {
@@ -28,7 +30,8 @@
     };
 
     packages = with pkgs; [
-      # user packages
+      google-chrome
+      karabiner-elements
     ];
   };
 

@@ -5,11 +5,13 @@
   ...
 }:
 {
+  system.primaryUser = username;
   users.users.${username} = {
     name = username;
     home = "/Users/${username}";
   };
   nixpkgs.hostPlatform = "aarch64-darwin";
+  nixpkgs.config.allowUnfree = true;
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = 6;
@@ -45,27 +47,24 @@
     LC_ALL = "en_US.UTF-8";
   };
 
-  environment.systemPackages = with pkgs; [
-    #
-  ];
-
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
   ];
 
+  environment.systemPackages = with pkgs; [
+
+  ];
+
   programs = {
-    # https://github.com/nix-community/nix-ld
-    # nix-ld.enable = true;
-
     zsh.enable = true;
+  };
 
-    # git = {
-    #   enable = true;
-    #   config = {
-    #     init = {
-    #       defaultBranch = "main";
-    #     };
-    #   };
-    # };
+  homebrew = {
+    enable = true;
+    casks = [
+      # casks
+    ];
+
+    # Optional settings like autoUpdate or cleanup can be added here
   };
 }
