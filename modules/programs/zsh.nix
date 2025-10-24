@@ -34,6 +34,10 @@ in
       # Source local environment variables if the file exists
       [ -f "$HOME/.zsh_local" ] && . "$HOME/.zsh_local"
 
+      ${pkgs.lib.optionalString isDarwin ''
+        # homebrew
+        export PATH=/opt/homebrew/bin:$PATH
+      ''}
     '';
 
     shellAliases = {
