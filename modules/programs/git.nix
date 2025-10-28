@@ -2,7 +2,11 @@
 {
   programs.git = {
     enable = true;
-    userName = "paradox8599";
-    userEmail = "paradox8599@outlook.com";
+    settings = {
+      user = {
+        name = "paradox8599";
+        email = "paradox8599@outlook.com";
+      };
+    };
   };
 }

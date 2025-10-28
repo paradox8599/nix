@@ -31,6 +31,9 @@
 
     packages = with pkgs; [
       google-chrome
+      qq
+      wechat
+      flameshot
     ];
   };
 
