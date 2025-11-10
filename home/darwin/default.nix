@@ -30,10 +30,12 @@
     };
 
     packages = with pkgs; [
+      qbittorrent-enhanced
+      aria2
+      mpv
       google-chrome
       qq
       wechat
-      flameshot
     ];
   };
 
